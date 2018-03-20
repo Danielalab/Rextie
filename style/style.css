@@ -1,31 +1,20 @@
 body {
-  margin: 0;
-  padding:0;
-  font-family: 'Raleway', sans-serif;
-  box-sizing: border-box;
- }
-
-.App {
-  width: 400px;
-  outline: 1px solid orange;
-  padding: 10px;
+  font-family: 'Nunito', sans-serif;
 }
 
-.form {
-    border: 1px solid blue;
-    padding: 2px;
+header {
+  /* width: 77%; */
+  /* float: right; */
 }
 
-.table {
-  outline: 1px solid greenyellow;
-  width: 100%;
+.btn-off {
+  padding: 1rem 1.2rem;
 }
 
-.tr-product {
-  outline: 1px solid red;
-  text-align: center;
+.btn-off .font-2x {
+  font-size: 1.2rem;
 }
 
-.tr-category {
-  outline: 1px solid skyblue;
+.btn-success {
+  background: linear-gradient(40deg,#7ACE3B,#34e0a1);
 }
