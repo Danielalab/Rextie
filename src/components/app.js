@@ -1,7 +1,6 @@
 import React from 'react';
-import {Button} from 'mdbreact'
 import Header from './Header';
-
+import Footer from './Footer'
 const App = () => {
 
   return (
@@ -10,7 +9,8 @@ const App = () => {
       <div className="col-md-3">
       </div>
       <div className="col-md-9 p-0">
-        <Header/>        
+        <Header/> 
+        <Footer/>      
       </div>
     </div>
   )
