@@ -4,7 +4,7 @@ const MyAccounts = () => (
   <div className="container-fluid">
     <ul className="nav md-pills nav-justified padding">
       <li className="nav-item">
-        <a className="nav-link border-tab text-uppercase font-weight-bold active text-left border-botton"  href="#">Mis favoritos</a>
+        <a className="nav-link border-tab text-uppercase font-weight-bold active text-left border-botton"  href="#">Mis cuentas</a>
       </li>
       <li className="nav-item d-flex justify-content-end">
         <button type="button" className="btn btn-info align-self-center">
@@ -19,13 +19,13 @@ const MyAccounts = () => (
             <thead>
                 <tr>
                     <th>#</th>
-                    <th className= "text-center">Nombre</th>
-                    <th className= "text-center">DNI</th>
-                    <th className= "text-center">Correo</th>
-                    <th className= "text-center">City</th>
-                    <th className= "text-center">Cuenta</th>
-                    <th className= "text-center">Banco</th>
-                    <th className= "text-center">Moneda</th>
+                    <th>Nombre</th>
+                    <th>DNI</th>
+                    <th>Correo</th>
+                    <th>City</th>
+                    <th>Cuenta</th>
+                    <th>Banco</th>
+                    <th>Moneda</th>
                 </tr>
             </thead>
             <tbody>
