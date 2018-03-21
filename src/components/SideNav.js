@@ -1,4 +1,5 @@
 import React from 'react';
+import UserData from './UserData'
 
 const SideNav = () => (
     <div className="container-side-nav">
@@ -10,12 +11,7 @@ const SideNav = () => (
               <a href="#"><img id="logo-header" width="180" height="59" src="https://rextie-static-prod2.s3.amazonaws.com/img/rextie.d8f6b41d48f8.png" alt="Cambio de Moneda Online con Rextie"/></a>
             </div>
           </li>
-          <li className="container-list">
-            <div className="">
-              <h3 className="text-center">Daniela Gonzales</h3>
-              <p className="text-center">07163854</p>
-            </div>
-          </li>
+          <UserData/>
           <li className="container-list">
             <a href="#" className="icons-sm d-flex align-items-center mt-4 mb-4">
               <span className="mx-4">
