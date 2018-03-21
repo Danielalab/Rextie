@@ -120,3 +120,18 @@ a.border-tab.active{
   border-left: 8px solid #7ACE3B;
   border-radius: 0;
 }
+
+/* Style for My accounts */
+
+.padding {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.border-botton {
+  width: 11rem;
+}
+
+.font-size {
+  font-size: 1rem;
+}
