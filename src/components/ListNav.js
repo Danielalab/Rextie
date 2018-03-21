@@ -1,15 +1,15 @@
 import React from 'react';
+// import Anchor from './Anchor'
 
-const ListNav = () => (
-
-          <li className="container-list">
-            <a href="#" className="icons-sm d-flex align-items-center mt-4 mb-4">
-              <span className="mx-4">
-                <span className="lnr lnr-chevron-right container-icon"></span>
-              </span>
-              <span className="container-font">Comprar / Vender</span>
-            </a>
-          </li>
+const ListNav = ({icon, name}) => (
+  <li className="container-list mt-4 mb-4">
+    <a href="#" className="icons-sm d-flex align-items-center">
+      <span className="mx-4">
+        <span className={icon}></span>
+      </span>
+      <span className="container-font">{name}</span>
+    </a>
+  </li>
 )
 
 export default ListNav;
