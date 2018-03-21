@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UserInformation = () => (
-    <div className="row justify-content-center">
+    <div className="row p-2 justify-content-center">
         <div className="card col-10">
             <div className="card-body">
                 <div className="md-form">
