@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer'
+import Transaction from './Transaction';
+import Main from './Main';
 const App = () => {
 
   return (
@@ -10,6 +12,7 @@ const App = () => {
       </div>
       <div className="col-md-9 p-0">
         <Header/> 
+        <Main/>
         <Footer/>      
       </div>
     </div>
