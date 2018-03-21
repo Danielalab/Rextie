@@ -14,8 +14,7 @@ body {
 /* Style for Side Nav */
 
 .container-side-nav {
-  width: 33%;
-  display: inline-block;
+
 }
 
 .container-list {
@@ -30,4 +29,17 @@ body {
 .container-font {
   color: #737476;
   font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn-off {
+  padding: 1rem 1.2rem;
+}
+
+.btn-off .font-2x {
+  font-size: 1.2rem;
+}
+
+.btn-success {
+  background: linear-gradient(40deg,#7ACE3B,#34e0a1);
 }
