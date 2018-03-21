@@ -19,47 +19,75 @@ const MyFavorites = () => (
             <thead>
                 <tr>
                   <th>#</th>
-                  <th>Banco</th>
+                  <th>Nombre</th>
+                  <th>DNI</th>
+                  <th>Correo</th>
+                  <th>City</th>
                   <th>Cuenta</th>
-                  <th>N° Cuenta</th>
+                  <th>Banco</th>
+                  <th>Moneda</th>
                 </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row">1</th>
+                  <td>Jerry</td>
+                  <td>72869880</td>
+                  <td>jerry.12@gmail.com</td>
+                  <td>New York</td>
+                  <td>1234567876432167</td>
                   <td>BCP</td>
-                  <td>Cuenta de ahorros</td>
-                  <td>1586534215643278</td>
+                  <td>Soles</td>
               </tr>
               <tr>
                 <th scope="row">2</th>
-                  <td>BBVA</td>
-                  <td>Cuenta corriente</td>
-                  <td>1586534215643278</td>
+                  <td>Jerry</td>
+                  <td>72869880</td>
+                  <td>jerry.12@gmail.com</td>
+                  <td>New York</td>
+                  <td>1234567876432167</td>
+                  <td>BCP</td>
+                  <td>Soles</td>
               </tr>
               <tr>
                 <th scope="row">3</th>
-                  <td>INTERBANK</td>
-                  <td>Cuenta corriente</td>
-                  <td>1586534215643278</td>
+                  <td>Jerry</td>
+                  <td>72869880</td>
+                  <td>jerry.12@gmail.com</td>
+                  <td>New York</td>
+                  <td>1234567876432167</td>
+                  <td>BCP</td>
+                  <td>Soles</td>
               </tr>
               <tr>
                 <th scope="row">4</th>
-                  <td>SCOTIABANK</td>
-                  <td>Cuenta ahorro</td>
-                  <td>1586534215643278</td>
+                  <td>Jerry</td>
+                  <td>72869880</td>
+                  <td>jerry.12@gmail.com</td>
+                  <td>New York</td>
+                  <td>1234567876432167</td>
+                  <td>BCP</td>
+                  <td>Soles</td>
               </tr>
               <tr>
                 <th scope="row">5</th>
-                  <td>CITYBANK</td>
-                  <td>Cuenta corriente</td>
-                  <td>1586534215643278</td>
+                  <td>Jerry</td>
+                  <td>72869880</td>
+                  <td>jerry.12@gmail.com</td>
+                  <td>New York</td>
+                  <td>1234567876432167</td>
+                  <td>BCP</td>
+                  <td>Soles</td>
               </tr>
               <tr>
                 <th scope="row">6</th>
-                  <td>BNP</td>
-                  <td>Cuenta ahorro</td>
-                  <td>1586534215643278</td>
+                  <td>Jerry</td>
+                  <td>72869880</td>
+                  <td>jerry.12@gmail.com</td>
+                  <td>New York</td>
+                  <td>1234567876432167</td>
+                  <td>BCP</td>
+                  <td>Soles</td>
               </tr>
             </tbody>
         </table>
