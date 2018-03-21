@@ -1,46 +1,50 @@
 import React from 'react';
 
 const UserInformation = () => (
-    <div className="row p-2 justify-content-center">
-        <div className="card col-10">
+  <div className="container-fluid">
+    <div className="row justify-content-center">
+        <div className="card col-10 card-border">
             <div className="card-body">
                 <div className="md-form">
                     <input value="Daniela Gonzales" type="text" id="nameUser" className="form-control"/>
-                    <label for="nameUser">Nombre Completo</label>
+                    <label htmlFor="nameUser">Nombre Completo</label>
                 </div>
             </div>
         </div>
-        <div className="card col-10">
+        <div className="card col-10 card-border">
             <div className="card-body">
                 <div className="md-form">
                     <input value="DNI" type="text" id="dni" className="form-control"/>
-                    <label for="dni">Tipo de Documento de Identidad</label>                    
+                    <label htmlFor="dni">Tipo de Documento de Identidad</label>                    
                 </div>
             </div>
         </div>
-        <div className="card col-10">
+        <div className="card col-10 card-border">
             <div className="card-body">
                 <div className="md-form">
                     <input value="74352136" type="text" id="numberdni" className="form-control"/>
-                    <label for="numberdni">Número de Documento</label>                    
+                    <label htmlFor="numberdni">Número de Documento</label>                    
                 </div>
-                <label for="exampleForm2"></label>
-                <input type="text" id="exampleForm2" className="form-control"/>
             </div>
         </div>
-        <div className="card col-10">
+        <div className="card col-10 card-border">
             <div className="card-body">
-                <label for="exampleForm2">Ocupación u Oficio</label>
-                <input type="text" id="exampleForm2" className="form-control"/>
+                <div className="md-form">
+                    <input value="Estudiante" type="text" id="work" className="form-control"/>
+                    <label htmlFor="work">Ocupación u Oficio</label>                    
+                </div>
             </div>
         </div>
-        <div className="card col-10">
+        <div className="card col-10 card-border">
             <div className="card-body">
-                <label for="exampleForm2">Celular</label>
-                <input type="text" id="exampleForm2" className="form-control"/>
+                <div className="md-form">
+                    <input value="995526665" type="text" id="phone" className="form-control"/>
+                    <label htmlFor="phone">Celular</label>                    
+                </div>
             </div>
         </div>
     </div>
+  </div>
 );
 
 export default UserInformation
