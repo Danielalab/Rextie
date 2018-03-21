@@ -3,7 +3,7 @@ import { navigationTo } from '../actions/actions';
 import App from '../components/app';
 
 const mapStateToProps = (state) => {
-  const { actualPage } = state.AppReucer;
+  const { actualPage } = state.AppReducer;
   return {
     actualPage: actualPage,
   }

@@ -1,10 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import Navigation from './Navigation'
-import Transaction from './Transaction';
-import UserInformation from './UserInformation';
-import MyAccounts from './MyAccounts'
-import MyFavorites from './MyFavorites'
 import Footer from './Footer'
 
 const Main = ({ actualPage }) => (
