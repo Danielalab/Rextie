@@ -59,6 +59,11 @@ body {
   background: linear-gradient(40deg,#7ACE3B, #21cc8d);
 }
 
+.navbar {
+  border-radius: 0;
+  border-left: none;
+}
+
 /* Main */
 
 .heigth-min {
