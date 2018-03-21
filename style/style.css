@@ -13,8 +13,8 @@ body {
 
 /* Style for Side Nav */
 
-.container-side-nav {
-
+.heigth {
+  height: 100vh;
 }
 
 .container-list {
@@ -32,6 +32,16 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+.color-3 {
+  color: #737476;
+}
+
+.my-sm-3 {
+  margin: .5rem 0;
+}
+
+/* header */
+
 .btn-off {
   padding: 1rem 1.2rem;
 }
@@ -41,5 +51,61 @@ body {
 }
 
 .btn-success {
-  background: linear-gradient(40deg,#7ACE3B,#34e0a1);
+  background: linear-gradient(40deg,#7ACE3B, #21cc8d);
+}
+
+/* Main */
+
+.heigth-min {
+  min-height: 80vh;
+}
+
+/* transaction */
+a.border-tab {
+  color: #A2A2A2;  
+}
+
+a.border-tab.active{
+  color: #7ACE3B;  
+  border-bottom: 4px solid #7ACE3B;
+}
+
+.font-operator {
+  font-size: 1.5rem;
+}
+
+.disabled-input {
+  background-color: #F6F9FC;
+}
+
+.text-sm-center {
+  text-align: center;
+} 
+
+/* Style for Main */
+
+.container-main {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 85vh;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px;
+  height: 87.7vh;
+  overflow: auto;
+}
+
+@media (min-width: 576px) { 
+  .text-md-left {
+    text-align: start;
+  }
 }

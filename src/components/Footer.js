@@ -64,7 +64,7 @@ const Footer = () => (
         <p>
           <i className="fa fa-envelope mr-3"></i> info@rextie.com</p>
         <p>
-          <i className="fa fa-phone mr-3"></i> (+51) (01) 642 9617 | <br/>(01) 342 2571</p>
+          <i className="fa fa-phone mr-3"></i> (+51) (01) 642 9617 | (01) 342 2571</p>
       </div>
 
     </div>

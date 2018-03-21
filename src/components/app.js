@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './Header';
-import Footer from './Footer'
 import SideNav from './SideNav'
+import Transaction from './Transaction';
+import Main from './Main';
 
 const DATA = [
   {icon: 'lnr lnr-chevron-right container-icon', name: 'Comprar / Vender'},
@@ -17,12 +18,12 @@ const App = () => {
   return (
     <div className="container-fluid p-0">
       <div className="row"></div>
-      <div className="col-md-3">
+      <div className="col-md-3 z-depth-3 heigth">
         <SideNav data={DATA}/>
       </div>
       <div className="col-md-9 p-0">
         <Header/> 
-        <Footer/>      
+        <Main/>
       </div>
     </div>
   )
