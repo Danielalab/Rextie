@@ -57,3 +57,11 @@ a.border-tab.active{
     text-align: start;
   }
 }
+
+/*  USER INFORMATION  rgba(0,0,0,.16),*/
+
+.card-border {
+  border: 1px solid #F6F9FC;
+  border-left: 8px solid #7ACE3B;
+  border-radius: 0;
+}
