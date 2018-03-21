@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UserInformation = () => (
-  <div className="container-fluid">
+  <div className="container-fluid my-4">
   <div className="row justify-content-center">
     <div className="card col-10 card-border">
       <div className="card-body">

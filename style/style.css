@@ -11,6 +11,11 @@ body {
   padding: 0;
 }
 
+.md-form input[type=text]:focus:not([readonly]){
+  box-shadow: 0 1px 0 0 #26A8E0;
+  border-bottom: 1px solid #26A8E0;
+}
+
 /* Style for Side Nav */
 
 .heigth {
