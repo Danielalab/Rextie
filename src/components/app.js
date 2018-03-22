@@ -1,6 +1,5 @@
 import React from 'react';
 import SideNav from './SideNav'
-import Transaction from './Transaction';
 import Main from './Main';
 
 const DATA = [

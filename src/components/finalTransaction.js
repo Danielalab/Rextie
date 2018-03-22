@@ -7,7 +7,7 @@ const FinalTransaction= ({ navigateTo }) => (
         <div className="card-body">
           <p className="card-text">Tu operación con código N° 12 ha sido registrada con éxito el día { 
             () => {
-              const meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+              const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
               const f=new Date();
               return(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
             } }. 
