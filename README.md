@@ -1,25 +1,15 @@
-# ReduxSimpleStarter
+# Rextie
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+- El objetivo de esta pagina fue proponer un nuevo diseño de la aplicación web (zona privada) que facilite a los
+usuarios realizar una cotización y operación de cambio de dólares.
 
-### Getting Started
+![captura de pantalla 111](https://user-images.githubusercontent.com/30939075/37799763-ade2b130-2dee-11e8-9bc8-d33cfaed5c9b.png)
 
-There are two methods for getting started with this repo.
+## Desarrollado para 
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
+[Laboratoria](http://laboratoria.la)
 
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
-
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-> npm install
-> npm start
-```
+### Integrantes:
+- Betsy Vidal
+- Daniela Gonzales
+ 
