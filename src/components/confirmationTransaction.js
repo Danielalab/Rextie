@@ -1,5 +1,4 @@
 import React from 'react';
-import FinalTransactionModal from './finalTransaction';
 
 const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive, moneySend, moneyReceive, telefono }) => (
   <div className="container-fluid">
@@ -45,7 +44,7 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
     </form>
     <div className="row justify-content-center">
       <a className="btn btn-back" onClick={() => navigateTo('transaction')}>Cambiar Operación</a>
-      <a className="btn btn-success" onClick={() => navigateTo('final-transaction')}>Aceptar</a> 
+      <a className="btn btn-success" onClick={() => navigateTo('transaction')}>Aceptar</a> 
     </div>     
     </div>
     </div>
