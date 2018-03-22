@@ -92,6 +92,14 @@ a.border-tab.active{
   text-align: center;
 } 
 
+.btn-back {
+  background: linear-gradient(40deg,#26A8E0, #21cc8d);
+}
+
+.gradient-grey {
+  background: linear-gradient(40deg,#F6F9FC, rgb(184, 184, 184));  
+}
+
 /* Style for Main */
 
 .container-main {
