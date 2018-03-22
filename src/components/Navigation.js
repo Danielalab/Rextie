@@ -6,7 +6,7 @@ import MyFavorites from './MyFavorites';
 import ConfirmationTransaction from './confirmationTransaction';
 import FinalTransaction from './finalTransaction'
 
-const Navigation = ({ actualPage, infoList, navigationInfo  }) => {
+const Navigation = ({ actualPage, infoList, navigationInfo, navigateTo }) => {
   switch (actualPage) {
     case 'transaction':
       return <Transaction infoList={infoList} navigationInfo={navigationInfo}/>;
