@@ -16,6 +16,14 @@ body {
   border-bottom: 1px solid #26A8E0;
 }
 
+.color-2{
+  color: #26A8E0;
+}
+
+ul {
+  list-style: none;
+}
+
 /* Style for Side Nav */
 
 .heigth {
