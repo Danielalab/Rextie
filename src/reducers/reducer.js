@@ -1,7 +1,8 @@
 import { actionTypes } from '../actions/actions';
 
 const INITIAL_STATE = {
-  actualPage: 'transaction'
+  actualPage: 'transaction',
+  infoList: 'buy'
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -10,6 +11,11 @@ export default (state = INITIAL_STATE, action) => {
       return { 
         ...state,
         actualPage: action.page 
+      }
+    case actionTypes.CHANGE:
+      return {
+        ...state,
+        infoList: action.info
       }
     default:
       return state;

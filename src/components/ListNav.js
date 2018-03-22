@@ -1,5 +1,4 @@
 import React from 'react';
-// import Anchor from './Anchor'
 
 const ListNav = ({id, icon, name, navigateTo}) => (
   <li className="container-list mt-4 mb-4" onClick={() => navigateTo(id)}>

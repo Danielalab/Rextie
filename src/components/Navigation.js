@@ -4,12 +4,10 @@ import UserInformation from './UserInformation';
 import MyAccounts from './MyAccounts'
 import MyFavorites from './MyFavorites';
 
-const Navigation = ({ actualPage }) => {
-  console.log('aaaaaaaaaaaa', actualPage)
-//   return <Transaction/>;
+const Navigation = ({ actualPage, infoList, navigationInfo  }) => {
   switch (actualPage) {
     case 'transaction':
-      return <Transaction/>;
+      return <Transaction infoList={infoList} navigationInfo={navigationInfo}/>;
     case 'userInfo':
       return <UserInformation/>;
     case 'myAccounts':

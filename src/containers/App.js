@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
-import { navigationTo } from '../actions/actions';
+import { navigationTo, navigationTran } from '../actions/actions';
 import App from '../components/app';
 
 const mapStateToProps = (state) => {
-  const { actualPage } = state.AppReducer;
+  const { actualPage, infoList } = state.AppReducer;
   return {
     actualPage: actualPage,
+    infoList: infoList
   }
 };
 
@@ -13,6 +14,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   navigateTo: (page) => {
     dispatch(navigationTo(page))
+  },
+
+  navigationInfo: (info) => {
+    dispatch(navigationTran(info))
   }
 })
 

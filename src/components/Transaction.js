@@ -1,80 +1,21 @@
 import React from 'react';
+import NavigationList from './NavigationList'
 
-const Transaction = () => (
+const LISTS = [
+  {id:'buy', class:'nav-link border-tab text-uppercase font-weight-bold active', name: 'Comprar'},
+  {id:'sell', class:'nav-link border-tab text-uppercase font-weight-bold', name: 'Vender'}
+]
+
+const Transaction = ({infoList, navigationInfo}) => (
   <div className="p-5">
     <ul className="nav md-pills nav-justified ">
-      <li className="nav-item">
-        <a className="nav-link border-tab text-uppercase font-weight-bold active" data-toggle="tab" href="#panel11" role="tab">Comprar</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link border-tab text-uppercase font-weight-bold" data-toggle="tab" href="#panel12" role="tab">Vender</a>
-      </li>
+    { LISTS.map(list =>  
+      <li className="nav-item" key = {list.id} onClick={() => navigationInfo(list.id)}>
+        <a className={list.class} data-toggle="tab" href="#" role="tab">{list.name}</a>
+      </li>)}
     </ul>
     <div className="tab-content">
-      <div className="tab-pane fade in show active" id="panel11" role="tabpanel">
-      <br/>
-      <form>
-        <div className="row align-items-end">
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <label className="font-weight-bold" for="exampleForm2">Comprando</label>
-            <input type="text" className="form-control disabled disabled-input " placeholder="USD" id="exampleForm2"/>
-          </div>
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <label className="font-weight-bold" for="exampleForm1">Cantidad</label>
-            <input type="text" className="form-control" placeholder="0" id="exampleForm1"/>
-          </div>
-          <div className="col-12 col-sm-1 text-sm-center text-md-left my-sm-3">
-            <p className="text-center font-operator align-text-bottom m-0 color-3">X</p>
-          </div>
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <label className="font-weight-bold" for="exampleForm2">Precio por USD</label>
-            <input type="text" className="form-control disabled disabled-input " placeholder="0" id="exampleForm2"/>
-          </div>
-          <div className="col-12 col-sm-1 text-sm-center text-md-left my-sm-3">
-            <p className="text-center font-operator align-text-bottom m-0 color-3">=</p>
-          </div>
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <label className="font-weight-bold" for="exampleForm2">PEN a gastar</label>
-            <input type="text" className="form-control" placeholder="0" id="exampleForm2"/>
-          </div>
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <button type="button" className="btn btn-success">Success</button>
-          </div>
-        </div>
-      </form>
-      </div>
-      <div className="tab-pane fade" id="panel12" role="tabpanel">
-      <br/>
-      <form>
-        <div className="row align-items-end">
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <label className="font-weight-bold" for="exampleForm2">Vendiendo</label>
-            <input type="text" className="form-control disabled disabled-input " placeholder="USD" id="exampleForm2"/>
-          </div>
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <label className="font-weight-bold" for="exampleForm1">Cantidad</label>
-            <input type="text" className="form-control" placeholder="0" id="exampleForm1"/>
-          </div>
-          <div className="col-12 col-sm-1 text-sm-center text-md-left my-sm-3">
-            <p className="text-center font-operator align-text-bottom m-0 color-3">X</p>
-          </div>
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <label className="font-weight-bold" for="exampleForm2">Precio por USD</label>
-            <input type="text" className="form-control disabled disabled-input " placeholder="0" id="exampleForm2"/>
-          </div>
-          <div className="col-12 col-sm-1 text-sm-center text-md-left my-sm-3">
-            <p className="text-center font-operator align-text-bottom m-0 color-3">=</p>
-          </div>
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <label className="font-weight-bold" for="exampleForm2">PEN a recibir</label>
-            <input type="text" className="form-control" placeholder="0" id="exampleForm2"/>
-          </div>
-          <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-            <button type="button" className="btn btn-success">Success</button>
-          </div>
-        </div>
-      </form>
-      </div>
+      <NavigationList infoList={infoList}/>
     </div>
   </div>
 );

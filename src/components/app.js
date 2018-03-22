@@ -9,10 +9,12 @@ const DATA = [
   {id:'myAccounts', icon: 'lnr lnr-license container-icon', name: 'Mis Cuentas'},
   {id:'favorites', icon: 'lnr lnr-star container-icon', name: 'Mis Favoritos'},
   {id:'history', icon: 'lnr lnr-chart-bars container-icon', name: 'Balance Historico'},
-  {id:'rextieAccounts', icon: 'lnr lnr-license container-icon', name: 'Cuentas Rextie'}
+  {id:'rextieAccounts', icon: 'lnr lnr-license container-icon', name: 'Cuentas Rextie'},
+  {id:'buy', comprar: 'Comprando', gastar: 'gastar'},
+  {id:'sell', vender: 'Vendiendo', recibir: 'recibir'}
 ];
 
-const App = ({actualPage, navigateTo}) => {
+const App = ({actualPage, navigateTo, infoList, navigationInfo}) => {
   return (
     <div className="container-fluid p-0">
       <div className="row"></div>
@@ -20,7 +22,7 @@ const App = ({actualPage, navigateTo}) => {
         <SideNav data={DATA} navigateTo={navigateTo}/>
       </div>
       <div className="col-md-9 p-0">
-        <Main actualPage={actualPage}/>
+        <Main data={DATA} actualPage={actualPage} infoList={infoList} navigationInfo={navigationInfo}/>
       </div>
     </div>
   )

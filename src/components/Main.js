@@ -3,10 +3,10 @@ import Header from './Header';
 import Navigation from './Navigation'
 import Footer from './Footer'
 
-const Main = ({ actualPage }) => (
+const Main = ({ actualPage, infoList, navigationInfo }) => (
   <div className="p-0 heigth-min container-main">
     <Header/> 
-    <Navigation actualPage={ actualPage }/>
+    <Navigation actualPage={ actualPage } infoList={infoList} navigationInfo={navigationInfo}/>
     <Footer/>
   </div>
 );
