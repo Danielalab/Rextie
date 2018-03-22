@@ -9,16 +9,16 @@ const Footer = () => (
           <h6 className="mb-0 white-text">Contáctanos a través de nuestra redes sociales</h6>
         </div>
         <div className="col-md-6 col-lg-7 text-center text-md-right">
-          <a className="fb-ic ml-0">
+          <a className="fb-ic m-2">
             <i className="fa fa-facebook white-text mr-lg-4"> </i>
           </a>
-          <a className="tw-ic">
+          <a className="tw-ic m-2">
             <i className="fa fa-twitter white-text mr-lg-4"> </i>
           </a>
-          <a className="gplus-ic">
+          <a className="gplus-ic m-2">
             <i className="fa fa-google-plus white-text mr-lg-4"> </i>
           </a>
-          <a className="li-ic">
+          <a className="li-ic m-2">
             <i className="fa fa-linkedin white-text mr-lg-4"> </i>
           </a>
         </div>

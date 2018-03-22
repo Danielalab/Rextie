@@ -3,6 +3,8 @@ import Transaction from './Transaction';
 import UserInformation from './UserInformation';
 import MyAccounts from './MyAccounts'
 import MyFavorites from './MyFavorites';
+import ConfirmationTransaction from './confirmationTransaction';
+import FinalTransaction from './finalTransaction'
 
 const Navigation = ({ actualPage, infoList, navigationInfo  }) => {
   switch (actualPage) {
@@ -17,7 +19,11 @@ const Navigation = ({ actualPage, infoList, navigationInfo  }) => {
     case 'history':
       return <UserInformation/>;
     case 'rextieAccounts':
-      return <UserInformation/>;
+      return <ConfirmationTransaction navigateTo={navigateTo}/>;
+    case 'confirmation' :
+      return <ConfirmationTransaction navigateTo={navigateTo}/>
+    case 'final-transaction' :
+      return <FinalTransaction navigateTo={navigateTo}/>  
     default:
       return null
   }
