@@ -1,42 +1,34 @@
 {
-  "name": "redux-simple-starter",
-  "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
-  "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+  "name": "reto-rextie",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js --progress --profile --colors",
+    "deploy": "gh-pages -d dist"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Betsy Vidal y Daniela Gonzales",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Danielalab/Rextie"
+  },
   "devDependencies": {
-    "babel-core": "^6.2.1",
-    "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-preset-react": "^6.1.18",
-    "chai": "^3.5.0",
-    "chai-jquery": "^2.0.0",
-    "jquery": "^2.2.1",
-    "jsdom": "^8.1.0",
-    "mocha": "^2.4.5",
-    "react-addons-test-utils": "^0.14.7",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-boilerplate": "^1.1.1",
+    "css-loader": "^0.28.7",
+    "gh-pages": "^1.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "open-browser-webpack-plugin": "0.0.5",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
-    "babel-preset-stage-1": "^6.1.18",
-    "bootstrap": "4.0.0",
-    "font-awesome": "4.7.0",
-    "lodash": "^3.10.1",
-    "mdbreact": "git+https://github.com/mdbootstrap/React-Bootstrap-with-Material-Design.git",
-    "prop-types": "^15.6.1",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "react-error-overlay": "4.0.0",
-    "react-redux": "4.3.0",
-    "react-router": "^2.0.1",
-    "redux": "^3.0.4"
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   }
 }
