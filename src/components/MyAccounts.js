@@ -1,13 +1,13 @@
 import React from 'react';
 
-const MyAccounts = () => (
+const MyAccounts = ({navigateTo}) => (
   <div className="container-fluid">
     <ul className="nav md-pills nav-justified padding">
       <li className="nav-item">
         <a className="nav-link border-tab text-uppercase font-weight-bold active text-left border-botton"  href="#">Mis cuentas</a>
       </li>
       <li className="nav-item d-flex justify-content-end">
-        <button type="button" className="btn btn-info align-self-center">
+        <button type="button" className="btn btn-info align-self-center" onClick={()=> navigateTo('addMyAccount')}>
           Agregar
         </button>
       </li>

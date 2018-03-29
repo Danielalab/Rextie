@@ -4,7 +4,9 @@ import UserInformation from './UserInformation';
 import MyAccounts from './MyAccounts'
 import MyFavorites from './MyFavorites';
 import ConfirmationTransaction from './confirmationTransaction';
-import FinalTransaction from './finalTransaction'
+import FinalTransaction from './finalTransaction';
+import AddMyAccount from './AddMyAccount';
+import AddFavoriteAccount from './AddFavoriteAccount'
 
 const Navigation = ({ actualPage, infoList, navigationInfo, navigateTo }) => {
   switch (actualPage) {
@@ -13,9 +15,9 @@ const Navigation = ({ actualPage, infoList, navigationInfo, navigateTo }) => {
     case 'userInfo':
       return <UserInformation/>;
     case 'myAccounts':
-      return <MyAccounts/>;
+      return <MyAccounts navigateTo={navigateTo}/>;
     case 'favorites':
-      return <MyFavorites/>;
+      return <MyFavorites navigateTo={navigateTo}/>;
     case 'history':
       return <UserInformation/>;
     case 'rextieAccounts':
@@ -23,7 +25,11 @@ const Navigation = ({ actualPage, infoList, navigationInfo, navigateTo }) => {
     case 'confirmation' :
       return <ConfirmationTransaction navigateTo={navigateTo}/>
     case 'final-transaction' :
-      return <FinalTransaction navigateTo={navigateTo}/>  
+      return <FinalTransaction navigateTo={navigateTo}/>
+    case 'addMyAccount':
+      return <AddMyAccount navigateTo={navigateTo}/>  
+    case 'addFavoriteAccount':
+      return <AddFavoriteAccount navigateTo={navigateTo}/>  
     default:
       return null
   }
