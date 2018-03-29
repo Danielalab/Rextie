@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
   }
 };
 
-
 const mapDispatchToProps = (dispatch) => ({
   navigateTo: (page) => {
     dispatch(navigationTo(page))
