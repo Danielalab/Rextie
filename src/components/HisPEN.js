@@ -1,6 +1,6 @@
 import React from 'react';
 
-const historicalUSD = () => (
+const HistoricalPEN = () => (
   <div className="container-fluid">
     <div className="tab-content">
       <div className="card">
@@ -45,4 +45,4 @@ const historicalUSD = () => (
   </div>
 )
 
-export default ListNav;
+export default HistoricalPEN;

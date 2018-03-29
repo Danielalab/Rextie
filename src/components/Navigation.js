@@ -3,10 +3,11 @@ import Transaction from './Transaction';
 import UserInformation from './UserInformation';
 import MyAccounts from './MyAccounts'
 import MyFavorites from './MyFavorites';
+import Historical from './Historical';
 import ConfirmationTransaction from './confirmationTransaction';
 import FinalTransaction from './finalTransaction'
 
-const Navigation = ({ actualPage, infoList, navigationInfo, navigateTo }) => {
+const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationInfo, navigateTo }) => {
   switch (actualPage) {
     case 'transaction':
       return <Transaction infoList={infoList} navigationInfo={navigationInfo} navigateTo={navigateTo}/>;
@@ -17,7 +18,7 @@ const Navigation = ({ actualPage, infoList, navigationInfo, navigateTo }) => {
     case 'favorites':
       return <MyFavorites/>;
     case 'history':
-      return <UserInformation/>;
+      return <Historical infoHis={infoHis} navigationHis={navigationHis} navigateTo={navigateTo}/>;
     case 'rextieAccounts':
       return <UserInformation/>;
     case 'confirmation' :

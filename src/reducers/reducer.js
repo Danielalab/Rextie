@@ -2,7 +2,8 @@ import { actionTypes } from '../actions/actions';
 
 const INITIAL_STATE = {
   actualPage: 'transaction',
-  infoList: 'buy'
+  infoList: 'buy',
+  infoHis: 'hisUSD'
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -16,6 +17,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         infoList: action.info
+      }
+    case actionTypes.CHANGE_HIS:
+      return {
+        ...state,
+        infoHis: action.his
       }
     default:
       return state;

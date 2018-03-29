@@ -1,6 +1,7 @@
 export const actionTypes = {
   NAVIGATION_TO : 'NAVIGATION_TO',
-  CHANGE : 'CHANGE'
+  CHANGE : 'CHANGE',
+  CHANGE_HIS: 'CHANGE_HIS'
 };
   
 export const navigationTo = (page) => ({
@@ -12,4 +13,10 @@ export const navigationTran = (info) => ({
   type: actionTypes.CHANGE,
   info,
 })
+
+export const navigationTranHis = (his) => ({
+  type: actionTypes.CHANGE_HIS,
+  his,
+})
+  
   
