@@ -6,7 +6,7 @@ const LISTS = [
   {id:'sell', class:'nav-link border-tab text-uppercase font-weight-bold', name: 'Vender'}
 ]
 
-const Transaction = ({infoList, navigationInfo}) => (
+const Transaction = ({infoList, navigationInfo, navigateTo}) => (
   <div className="p-5">
     <ul className="nav md-pills nav-justified ">
     { LISTS.map(list =>  
@@ -15,7 +15,7 @@ const Transaction = ({infoList, navigationInfo}) => (
       </li>)}
     </ul>
     <div className="tab-content">
-      <NavigationList infoList={infoList}/>
+      <NavigationList infoList={infoList} navigateTo={navigateTo}/>
     </div>
   </div>
 );

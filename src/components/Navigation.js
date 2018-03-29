@@ -9,7 +9,7 @@ import FinalTransaction from './finalTransaction'
 const Navigation = ({ actualPage, infoList, navigationInfo, navigateTo }) => {
   switch (actualPage) {
     case 'transaction':
-      return <Transaction infoList={infoList} navigationInfo={navigationInfo}/>;
+      return <Transaction infoList={infoList} navigationInfo={navigationInfo} navigateTo={navigateTo}/>;
     case 'userInfo':
       return <UserInformation/>;
     case 'myAccounts':
@@ -19,7 +19,7 @@ const Navigation = ({ actualPage, infoList, navigationInfo, navigateTo }) => {
     case 'history':
       return <UserInformation/>;
     case 'rextieAccounts':
-      return <ConfirmationTransaction navigateTo={navigateTo}/>;
+      return <UserInformation/>;
     case 'confirmation' :
       return <ConfirmationTransaction navigateTo={navigateTo}/>
     case 'final-transaction' :

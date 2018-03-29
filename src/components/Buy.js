@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Buy = () => (  
+const Buy = ({navigateTo}) => (  
   <div>
   <br/>
   <form>
@@ -28,7 +28,7 @@ const Buy = () => (
         <input type="text" className="form-control" placeholder="0" id="exampleForm2"/>
       </div>
       <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-        <button type="button" className="btn btn-success">Success</button>
+        <button type="button" className="btn btn-success" onClick={()=> navigateTo('confirmation')}>Success</button>
       </div>
     </div>
   </form>

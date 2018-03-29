@@ -21,7 +21,7 @@ const App = ({actualPage, navigateTo, infoList, navigationInfo}) => {
         <SideNav data={DATA} navigateTo={navigateTo}/>
       </div>
       <div className="col-md-9 p-0">
-        <Main data={DATA} actualPage={actualPage} infoList={infoList} navigationInfo={navigationInfo}/>
+        <Main data={DATA} actualPage={actualPage} infoList={infoList} navigationInfo={navigationInfo} navigateTo={navigateTo}/>
       </div>
     </div>
   )
