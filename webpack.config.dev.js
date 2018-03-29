@@ -7,13 +7,13 @@ module.exports = {
   context:  resolve(__dirname, 'src'),
   entry: './index.js',
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: resolve(__dirname, 'public'),
     publicPath: '',
     filename: 'bundle.js',
   },
   /*Solo sirve para development*/
   devServer: {
-    contentBase: resolve(__dirname, 'dist'),
+    contentBase: resolve(__dirname, 'public'),
   },
   module: {
     rules: [
@@ -43,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, 'dist', 'index.html'),
+      template: resolve(__dirname, 'public', 'index.html'),
       filename: 'index.html'
     }),
     new OpenBrowserWebpackPlugin({

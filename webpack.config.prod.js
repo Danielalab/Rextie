@@ -8,7 +8,7 @@ module.exports = {
   entry: './index.js', // archivo de entrada
   output: { // archivos de salida
     filename: 'app.min.js', // archivo de salida
-    path: resolve(__dirname, 'dist'), // ruta donde va a estar el archivo, si deseo que sea aqui mismo pongo _dirname
+    path: resolve(__dirname, 'public'), // ruta donde va a estar el archivo, si deseo que sea aqui mismo pongo _dirname
     publicPath: ''
   },
   module: {
@@ -45,7 +45,7 @@ module.exports = {
     // inyecta el codigo dentro del `index.html`
     //  Genera el html que se mostrará
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, 'dist', 'index.html'),
+      template: resolve(__dirname, 'public', 'index.html'),
       filename: 'index.html',
     }),
     // optimizacion 1
