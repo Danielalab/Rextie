@@ -160,3 +160,19 @@ a.border-tab.active{
 .font-size {
   font-size: 1rem;
 }
+
+/* Style for Historical */
+
+.table-historical {
+  margin-top: 3rem;
+}
+
+/* Style for Accounts Rexrtie */
+
+.title-cuenta-rextie {
+  color: #26A8E0;
+  font-weight: 600;
+  display: inline-block;
+  width: 4rem;
+  border-bottom: 3px solid
+}

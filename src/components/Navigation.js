@@ -4,6 +4,7 @@ import UserInformation from './UserInformation';
 import MyAccounts from './MyAccounts'
 import MyFavorites from './MyFavorites';
 import Historical from './Historical';
+import AccountsRextie from './AccountsRextie';
 import ConfirmationTransaction from './confirmationTransaction';
 import FinalTransaction from './finalTransaction';
 import AddMyAccount from './AddMyAccount';
@@ -22,7 +23,7 @@ const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationIn
     case 'history':
       return <Historical infoHis={infoHis} navigationHis={navigationHis} navigateTo={navigateTo}/>;
     case 'rextieAccounts':
-      return <UserInformation/>;
+      return <AccountsRextie navigateTo={navigateTo}/>;
     case 'confirmation' :
       return <ConfirmationTransaction navigateTo={navigateTo}/>
     case 'final-transaction' :

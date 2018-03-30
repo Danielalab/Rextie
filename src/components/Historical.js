@@ -2,7 +2,7 @@ import React from 'react';
 import NavigationHis from './NavigationHis'
 
 const HISTORICAL = [
-  {id:'hisUSD', class:'nav-link border-tab text-uppercase font-weight-bold active', name: 'Dolares'},
+  {id:'hisUSD', class:'nav-link border-tab text-uppercase font-weight-bold active', name: 'Dólares'},
   {id:'hisPEN', class:'nav-link border-tab text-uppercase font-weight-bold', name: 'Soles'}
 ]
 
