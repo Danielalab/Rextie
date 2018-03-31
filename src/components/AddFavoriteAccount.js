@@ -22,7 +22,7 @@ const AddFavoriteAccount = ({navigateTo}) => (
           <input type="text" className="form-control" id="operation" placeholder="Número de Documento"/>
         </div>
         <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="name">Número Completo</label>
+          <label className="text-uppercase" for="name">Nombre Completo</label>
           <input type="text" className="form-control" id="name" placeholder="Nombre Completo"/>
         </div>
         <div className="form-group col-11 col-md-9">
