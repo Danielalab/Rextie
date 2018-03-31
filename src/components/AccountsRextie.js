@@ -1,9 +1,10 @@
 import React from 'react';
+import ListAccounRextie from './ListAccounRextie'
 
-const HISTORICAL = [
-  {id:'CCI', banco:'CCI Interbank (para transferencias interbancarias)', tipoCuenta: ['Corriente', ' Corriente'], moneda: ['Dólares', 'Soles'], NumCuenta: ['00316600300127343563', '00316600300127342868']},
-  {id:'BCP', banco:'BCP', tipoCuenta: ['Corriente', ' Corriente'], moneda:['Dólares', 'Soles'], NumCuenta: ['1931700523109', '1932357833093']},
-  {id:'INTERBANK', banco:'Interbank', tipoCuenta: ['Corriente', ' Corriente'], moneda: ['Dólares', 'Soles'], NumCuenta: ['1663001273435', '1663001273428']}
+const ACCOUNTS_REXTIE = [
+  {id:'CCI', bank:'CCI Interbank (para transferencias interbancarias)', rows: [{typeAccount: 'Corriente', coin: 'Dólares', numAccount: '00316600300127343563'}, {typeAccount: 'Corriente', coin: 'Soles', numAccount: '00316600300127342868'}]},
+  {id:'BCP', bank:'BCP', rows: [{typeAccount: 'Corriente', coin: 'Dólares', numAccount: '1931700523109'}, {typeAccount: 'Corriente', coin: 'Soles', numAccount: '1932357833093'}]},
+  {id:'INTERBANK', bank:'Interbank', rows: [{typeAccount: 'Corriente', coin: 'Dólares', numAccount: '1663001273435'}, {typeAccount: 'Corriente', coin: 'Soles', numAccount: '1663001273428'}]}
 ]
 
 const AccountsRextie = ({navigateTo}) => (
@@ -15,28 +16,12 @@ const AccountsRextie = ({navigateTo}) => (
     </ul>
     <div className="tab-content">
       <div className="card">
-        <div className="card-body">
-          <h5 className="title-cuenta-rextie">BCP</h5>
-          <table className="table table-hover table-responsive-md table-fixed">
-            <thead>
-                <tr>
-                  <th>Tipo de Cuenta</th>
-                  <th>Moneda</th>
-                  <th>N° Cuenta</th>
-                </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Corriente</td>
-                <td>Dólares</td>
-                <td>1586534215643278</td>
-              </tr>
-            </tbody>
-        </table>
-        </div>
+      {ACCOUNTS_REXTIE.map(accounts => <ListAccounRextie {...accounts} key={accounts.id}/>)}
       </div>
     </div>
   </div>
 );
 
 export default AccountsRextie;
+
+// tipoCuenta: ['Corriente', ' Corriente'], moneda:['Dólares', 'Soles'], numCuenta: ['1931700523109', '1932357833093']

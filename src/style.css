@@ -164,15 +164,17 @@ a.border-tab.active{
 /* Style for Historical */
 
 .table-historical {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 /* Style for Accounts Rexrtie */
 
 .title-cuenta-rextie {
   color: #26A8E0;
-  font-weight: 600;
+  font-weight: 800;
   display: inline-block;
-  width: 4rem;
-  border-bottom: 3px solid
+}
+
+.card-body {
+  padding-bottom: 0;
 }
