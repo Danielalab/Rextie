@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationList from './NavigationList'
+import NavigationList from '../containers/NavigationList'
 
 const LISTS = [
   {id:'buy', class:'nav-link border-tab text-uppercase font-weight-bold active', name: 'Comprar'},

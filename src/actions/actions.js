@@ -2,7 +2,7 @@ export const actionTypes = {
   NAVIGATION_TO : 'NAVIGATION_TO',
   CHANGE : 'CHANGE',
   CHANGE_HIS: 'CHANGE_HIS',
-  // OPERATIONS: 'OPERATIONS'
+  OPERATIONS: 'OPERATIONS'
 };
 
 export const navigationTo = (page) => ({
@@ -20,7 +20,8 @@ export const navigationTranHis = (his) => ({
   his,
 })
 
-// export const operation = (id) => ({
-//   type: actionTypes.OPERATIONS,
-//   id,
-// })
+export const operation = (val, id) => ({
+  type: actionTypes.OPERATIONS,
+  val,
+  id
+})
