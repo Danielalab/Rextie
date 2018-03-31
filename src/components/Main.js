@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import Navigation from './Navigation'
+import Navigation from '../containers/Navigation'
 import Footer from './Footer'
 
 const Main = ({ actualPage, infoList, infoHis, navigationHis, navigationInfo, navigateTo}) => (
