@@ -1,6 +1,6 @@
 import React from 'react';
-import Buy from './Buy';
-import Sell from './Sell';
+import Buy from '../containers/Buy';
+import Sell from '../containers/Sell';
 
 const NavigationList = ({ infoList, navigateTo}) => {
   switch (infoList) {
