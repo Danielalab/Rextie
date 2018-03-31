@@ -1,8 +1,8 @@
 import React from 'react';
 
-//  inicia código de validación de formulario
+//  inicia código de validación de formulario para añadir mi cuenta
 
-var regExpNumber = /^\d+$/
+const regExpNumber = /^\d+$/
 
 let validateBank = false;
 let validateNumberAccount = false;
@@ -50,14 +50,13 @@ function onChangeNumberAccount(number) {
   }
 }
 
-
 function allInputsValid() {
-  if (validateBank && validateTypeAccount && validateMoney) {
+  if (validateBank && validateTypeAccount && validateMoney && validateNumberAccount) {
     disabledButton = false;
   }
 }
 
-// inicia componente
+// inicia componente para añadir una nueva cuenta personal
 
 const AddMyAccount = ({navigateTo}) => (
   <div className="container-fluid">
