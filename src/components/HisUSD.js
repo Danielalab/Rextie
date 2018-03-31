@@ -1,8 +1,8 @@
 import React from 'react';
 
-const historicalUSD = () => (
+const HistoricalUSD = () => (
   <div className="container-fluid">
-    <div className="tab-content">
+    <div className="tab-content table-historical">
       <div className="card">
         <div className="card-body">
           <table className="table table-hover table-responsive-md table-fixed">
@@ -19,21 +19,21 @@ const historicalUSD = () => (
               <tr>
                 <th scope="row">1</th>
                   <td>1586534215643278</td>
-                  <td>Vendio</td>
+                  <td>Venta</td>
                   <td>$ 900</td>
                   <td>14/03/2018</td>
               </tr>
               <tr>
                 <th scope="row">2</th>
                   <td>1586534215643278</td>
-                  <td>Compro</td>
+                  <td>Compra</td>
                   <td>$ 650</td>
                   <td>14/03/2018</td>
               </tr>
               <tr>
                 <th scope="row">3</th>
                   <td>1586534215643278</td>
-                  <td>Vendio</td>
+                  <td>Venta</td>
                   <td>$ 1900</td>
                   <td>14/03/2018</td>
               </tr>
@@ -45,4 +45,4 @@ const historicalUSD = () => (
   </div>
 )
 
-export default ListNav;
+export default HistoricalUSD;
