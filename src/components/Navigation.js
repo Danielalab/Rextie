@@ -7,6 +7,7 @@ import Historical from './Historical';
 import AccountsRextie from './AccountsRextie';
 import ConfirmationTransaction from './confirmationTransaction';
 import FinalTransaction from './finalTransaction';
+import AddAccount from './AddAccount';
 import AddMyAccount from './AddMyAccount';
 import AddFavoriteAccount from './AddFavoriteAccount'
 
@@ -28,6 +29,8 @@ const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationIn
       return <ConfirmationTransaction navigateTo={navigateTo} dataClick={dataClick}/>
     case 'final-transaction' :
       return <FinalTransaction navigateTo={navigateTo}/>
+    case 'addAccount' :
+      return <AddAccount navigateTo={navigateTo}/>
     case 'addMyAccount':
       return <AddMyAccount navigateTo={navigateTo}/>  
     case 'addFavoriteAccount':

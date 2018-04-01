@@ -1,16 +1,11 @@
 import React from 'react';
 
-// inicia validación de formulario
+// inicia validación del formulario
 
 const regExpNumber = /^\d+$/;
-const regExpText = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
-const regExpEmail = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
 
 // variables centinelas
-let validateTypeDoc = false;
-let validateNumberDoc = false;
-let validateName = false;
-let validateEmail = false;
+let validateCategory = false;
 let validateBank = false;
 let validateTypeAccount = false;
 let validateMoney = false;
@@ -18,42 +13,12 @@ let validateNumberAccount = false;
 
 let disabledButton = true;
 
-function onChangeTypeDoc(typeDoc) {
-  if (typeDoc) {
-    validateTypeDoc = true;
-    allInputsValid();
-  } else {
-    validateTypeDoc = false,
-    disabledButton = true;
-  }
-}
-
-function onChangeNumberDoc(number) {
-  if (regExpNumber.test(number)) {
-    validateNumberDoc = true;
+function onChangeCategory(category) {
+  if (category) {
+    validateCategory = true;
     allInputsValid()
   } else {
-    validateNumberDoc = false;
-    disabledButton = true
-  }
-}
-
-function onChangeName(name) {
-  if (regExpText.test(name)) {
-    validateName = true;
-    allInputsValid()
-  } else {
-    validateName = false;
-    disabledButton = true
-  }
-}
-
-function onChangeEmail(email) {
-  if (regExpEmail.test(email)) {
-    validateEmail = true;
-    allInputsValid()
-  } else {
-    validateEmail = false;
+    validateCategory = false;
     disabledButton = true
   }
 }
@@ -99,46 +64,34 @@ function onChangeNumberAccount(number) {
 }
 
 function allInputsValid() {
-  if (validateTypeDoc && validateNumberDoc && validateName && validateEmail && validateBank && validateTypeAccount && validateMoney && validateNumberAccount) {
+  if (validateCategory && validateBank && validateTypeAccount && validateMoney && validateNumberAccount) {
     disabledButton = false;
   }
 }
 
-// incia componente para añadir una cuenta a favoritos
 
-const AddFavoriteAccount = ({navigateTo}) => (
+// inicia componente
+
+const AddAccount = ({navigateTo}) => (
   <div className="container-fluid">
     <div className="row justify-content-center">
     <div className="card col-11 col-md-10 p-0 m-5">
-    <h5 className="card-header grey lighten-3 grey-text text-center">Añadir Cuenta a mis Favoritos</h5>
+    <h5 className="card-header grey lighten-3 grey-text text-center">Añadir Cuenta</h5>
     <div className="card-body">
     <form>
       <div className="form-row justify-content-center">
         <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="inputOrigin">Selecciona el tipo de Documento</label>
-          <select id="inputOrigin" className="form-control" onChange={() => onChangeTypeDoc(event.target.value)}>
-            <option value="">Elige el tipo de Documento</option>
-            <option value="DNI">DNI</option>
-            <option value="RUC">RUC</option>
-            <option value="">CE</option>            
+          <label className="text-uppercase" for="inputOrigin">Categoría de la Cuenta</label>
+          <select id="inputOrigin" className="form-control" onChange={() => onChangeCategory(event.target.value)}>
+            <option value="">...</option>
+            <option value="my-account">Cuenta Propia (mis cuentas)</option>
+            <option value="my-favorites">Cuenta de Terceros (mis favoritos)</option>
           </select>
-        </div>
-        <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="operation">Número de Documento</label>
-          <input type="text" className="form-control" id="operation" placeholder="Número de Documento" onChange={() => onChangeNumberDoc(event.target.value)}/>
-        </div>
-        <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="name">Nombre Completo</label>
-          <input type="text" className="form-control" id="name" placeholder="Nombre Completo" onChange={() => onChangeName(event.target.value)}/>
-        </div>
-        <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="email">Correo Electrónico</label>
-          <input type="email" className="form-control" id="email" placeholder="Email" onChange={() => onChangeEmail(event.target.value)}/>
         </div>
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputdestination">Selecciona el Banco de tu Cuenta</label>
           <select id="inputdestination" className="form-control" onChange={() => onChangeBank(event.target.value)}>
-            <option value="">Selecciona tu Banco</option>
+            <option value="">Selecciona un Banco</option>
             <option value="BBVA">BBVA</option>
             <option value="Scotiabank">Scotiabank</option>
             <option value="BCP">BCP</option>
@@ -160,7 +113,6 @@ const AddFavoriteAccount = ({navigateTo}) => (
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="inputOrigin">Selecciona el tipo de Cuenta</label>
           <select id="inputOrigin" className="form-control" onChange={() => onChangeTypeAccount(event.target.value)}>
             <option value="">Elige el tipo de Cuenta</option>
             <option value="Ahorros">Cuenta de Ahorros</option>
@@ -168,7 +120,6 @@ const AddFavoriteAccount = ({navigateTo}) => (
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="inputOrigin">Selecciona el tipo de Cambio</label>
           <select id="inputOrigin" className="form-control" onChange={() => onChangeMoney(event.target.value)}>
             <option value="">Elige el tipo de Cambio</option>
             <option value="Soles">Soles</option>
@@ -176,14 +127,13 @@ const AddFavoriteAccount = ({navigateTo}) => (
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="card-number">Número de Cuenta</label>
           <input type="text" className="form-control" id="card-number" placeholder="Número de Cuenta" onChange={() => onChangeNumberAccount(event.target.value)}/>
         </div>
       </div>
     </form>
     <div className="row justify-content-center">
-      <a className="btn btn-back" onClick={() => navigateTo('myAccounts')}>Cancelar</a>
-      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => navigateTo('myAccounts')}>Añadir</button> 
+      <a className="btn btn-back" onClick={() => navigateTo('confirmation')}>Cancelar</a>
+      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => navigateTo('confirmation')}>Añadir</button> 
     </div>     
     </div>
     </div>
@@ -191,4 +141,4 @@ const AddFavoriteAccount = ({navigateTo}) => (
   </div>
 )
 
-export default AddFavoriteAccount;
+export default AddAccount;
