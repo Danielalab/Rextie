@@ -10,7 +10,8 @@ const INITIAL_STATE = {
   actualPage: 'transaction',
   infoList: 'buy',
   infoHis: 'hisUSD',
-  dataClick: dataBuySell
+  dataClick: dataBuySell,
+  user: null
 }
 
 export default (state = INITIAL_STATE, action) => {
