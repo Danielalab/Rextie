@@ -120,7 +120,7 @@ const AddFavoriteAccount = ({navigateTo}) => (
             <option value="">Elige el tipo de Documento</option>
             <option value="DNI">DNI</option>
             <option value="RUC">RUC</option>
-            <option value="">CE</option>            
+            <option value="">CE</option>
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
@@ -149,14 +149,14 @@ const AddFavoriteAccount = ({navigateTo}) => (
             <option value="Banco Financiero">Banco Financiero</option> 
             <option value="BanBif">BanBif</option>
             <option value="Crediscotia Financiera">Crediscotia Financiera</option>
-            <option value="Mi Banco">Mi Banco</option>           
-            <option value="Agrobanco">Agrobanco</option>           
-            <option value="Banco GNB">Banco GNB</option>           
+            <option value="Mi Banco">Mi Banco</option>
+            <option value="Agrobanco">Agrobanco</option>
+            <option value="Banco GNB">Banco GNB</option>
             <option value="Banco Falabella">Banco Falabella</option>
             <option value="Banco Ripley">Banco Ripley</option>
-            <option value="Banco Santander">Banco Santander</option>                                  
-            <option value="Banco Azteca">Banco Azteca</option>                                  
-            <option value="ICBC">ICBC</option>                                                                                                               
+            <option value="Banco Santander">Banco Santander</option>
+            <option value="Banco Azteca">Banco Azteca</option>
+            <option value="ICBC">ICBC</option>
           </select>
         </div>
         <div className="form-group col-11 col-md-9">

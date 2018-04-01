@@ -81,14 +81,14 @@ const AddMyAccount = ({navigateTo}) => (
             <option value="Banco Financiero">Banco Financiero</option> 
             <option value="BanBif">BanBif</option>
             <option value="Crediscotia Financiera">Crediscotia Financiera</option>
-            <option value="Mi Banco">Mi Banco</option>           
-            <option value="Agrobanco">Agrobanco</option>           
-            <option value="Banco GNB">Banco GNB</option>           
+            <option value="Mi Banco">Mi Banco</option>
+            <option value="Agrobanco">Agrobanco</option>
+            <option value="Banco GNB">Banco GNB</option>
             <option value="Banco Falabella">Banco Falabella</option>
             <option value="Banco Ripley">Banco Ripley</option>
-            <option value="Banco Santander">Banco Santander</option>                                  
-            <option value="Banco Azteca">Banco Azteca</option>                                  
-            <option value="ICBC">ICBC</option>                                                                                                               
+            <option value="Banco Santander">Banco Santander</option>
+            <option value="Banco Azteca">Banco Azteca</option>
+            <option value="ICBC">ICBC</option>
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
@@ -100,7 +100,7 @@ const AddMyAccount = ({navigateTo}) => (
           <select id="inputOrigin" className="form-control" onChange={(event)=> onChangeTypeAccount(event.target.value)}>
             <option value="">Elige el tipo de Cuenta</option>
             <option value="Ahorros">Cuenta de Ahorros</option>
-            <option value="Corriente">Cuenta Corriente</option>            
+            <option value="Corriente">Cuenta Corriente</option>
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
@@ -108,7 +108,7 @@ const AddMyAccount = ({navigateTo}) => (
           <select id="inputOrigin" className="form-control" onChange={(event) => onChangeMoney(event.target.value)}>
             <option value="">Elige el tipo de Cambio</option>
             <option value="">Soles</option>
-            <option value="">Dólares</option>            
+            <option value="">Dólares</option>
           </select>
         </div>
         <div className="form-check mb-2 mr-sm-2">
