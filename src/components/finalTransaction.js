@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FinalTransaction= ({ navigateTo }) => (
+const FinalTransaction= ({ navigateTo, dataClick }) => (
   <div className="container-fluid">
     <div  className="row justify-content-center">
       <div className="card col-11 col-md-10 p-0 m-5">
@@ -24,7 +24,7 @@ const FinalTransaction= ({ navigateTo }) => (
               <li>RUC del titular:</li>
           </ul>
           <ul className="col-5 col-md-5">
-              <li>S/ 2,000.00 PEN</li>
+              <li>{('COMPRA' === dataClick.id) ? 'S/ ' + dataClick.PEN : '$ ' + dataClick.quantity}</li>
               <li>Scotiabank</li>
               <li>Interbank</li>
               <li>00316600300127342868</li>
@@ -42,8 +42,8 @@ const FinalTransaction= ({ navigateTo }) => (
               <li>Titular de la cuenta:</li>
           </ul>
           <ul className="col-5 col-md-5">
-              <li>$ 609.01 USD</li>
-              <li>3.2840</li>
+              <li>{('COMPRA' === dataClick.id) ? '$ ' + dataClick.quantity : 'S/ ' + dataClick.PEN}</li>
+              <li>{dataClick.priceUSD}</li>
               <li>BCP</li>
               <li>00316600300127342868</li>
               <li>Betsy Vidal</li>
