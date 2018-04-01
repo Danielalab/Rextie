@@ -172,7 +172,7 @@ const AddFavoriteAccount = ({navigateTo}) => (
           <select id="inputOrigin" className="form-control" onChange={() => onChangeMoney(event.target.value)}>
             <option value="">Elige el tipo de Cambio</option>
             <option value="Soles">Soles</option>
-            <option value="Dólares">Dólares</option>            
+            <option value="Dólares">Dólares</option>
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
@@ -183,7 +183,7 @@ const AddFavoriteAccount = ({navigateTo}) => (
     </form>
     <div className="row justify-content-center">
       <a className="btn btn-back" onClick={() => navigateTo('myAccounts')}>Cancelar</a>
-      <a className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => navigateTo('myAccounts')}>Añadir</a> 
+      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => navigateTo('myAccounts')}>Añadir</button> 
     </div>     
     </div>
     </div>

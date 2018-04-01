@@ -120,7 +120,7 @@ const AddMyAccount = ({navigateTo}) => (
     </form>
     <div className="row justify-content-center">
       <a className="btn btn-back" onClick={() => navigateTo('myAccounts')}>Cancelar</a>
-      <a className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => navigateTo('myAccounts')}>Añadir</a> 
+      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => navigateTo('myAccounts')}>Añadir</button> 
     </div>     
     </div>
     </div>

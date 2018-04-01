@@ -1,8 +1,8 @@
 import { actionTypes } from '../actions/actions';
 
 const dataBuySell = [
-  {id: 'COMPRA' , quantity: 20, priceUSD: 3.2380, PEN: 64.76, saving: 0.92, typeOperation1: 'RECIBIRÁ', typeOperation2: 'ENVIARÁ'},
-  {id: 'VENTA', quantity: 20, priceUSD: 3.1900, PEN: 63.80, saving:  0.92, typeOperation1: 'ENVIARÁ', typeOperation2: 'RECIBIRÁ'}
+  {id: 'COMPRA' , quantity: 20, priceUSD: 3.2380, priceBanck: 3.2840, PEN: 64.76, saving: 0.92, typeOperation1: 'RECIBIRÁ', typeOperation2: 'ENVIARÁ'},
+  {id: 'VENTA', quantity: 20, priceUSD: 3.1900, priceBanck: 3.20, PEN: 63.80, saving:  0.92, typeOperation1: 'ENVIARÁ', typeOperation2: 'RECIBIRÁ'}
 ]
 
 const INITIAL_STATE = {
@@ -40,6 +40,9 @@ export default (state = INITIAL_STATE, action) => {
             change.quantity = action.val
             const changeSpendPEN = change.quantity * priceUSD;
             change.PEN = changeSpendPEN;
+
+            const changeSaving = ((-1) * (changeSpendPEN - change.quantity * change.priceBanck)).toFixed(2);
+            change.saving = changeSaving;
           }
           return change;
         })
