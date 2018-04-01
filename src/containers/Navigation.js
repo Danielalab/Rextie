@@ -3,9 +3,9 @@ import { operationClick } from '../actions/actions';
 import Navigation from '../components/Navigation';
 
 const mapStateToProps = (state) => {
-  const { dataBuySell } = state.AppReducer;
+  const { dataClick } = state.AppReducer;
   return {
-    dataBuySell: dataBuySell
+    dataClick: dataClick
   }
 };
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 })
 
-export default connect( mapStateToProps)(Navigation);
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

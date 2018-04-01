@@ -1,8 +1,8 @@
 import { actionTypes } from '../actions/actions';
 
 const dataBuySell = [
-  {id: 'compra' , quantity: 20, priceUSD: 3.2380, PEN: 64.76, saving: 0.92},
-  {id: 'venta', quantity: 20, priceUSD: 3.1900, PEN: 63.80, saving:  0.92}
+  {id: 'COMPRA' , quantity: 20, priceUSD: 3.2380, PEN: 64.76, saving: 0.92, typeOperation1: 'RECIBIRÁ', typeOperation2: 'ENVIARÁ'},
+  {id: 'VENTA', quantity: 20, priceUSD: 3.1900, PEN: 63.80, saving:  0.92, typeOperation1: 'ENVIARÁ', typeOperation2: 'RECIBIRÁ'}
 ]
 
 const INITIAL_STATE = {
@@ -10,6 +10,7 @@ const INITIAL_STATE = {
   actualPage: 'transaction',
   infoList: 'buy',
   infoHis: 'hisUSD',
+  dataClick: dataBuySell
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -43,11 +44,11 @@ export default (state = INITIAL_STATE, action) => {
           return change;
         })
       }
-    // case actionTypes.OPERATIONS_CLICK:
-    //   return {
-    //     ...state,
-    //     dataBuySell: action.id
-    //   }
+    case actionTypes.OPERATIONS_CLICK:
+      return {
+        ...state,
+        dataClick: action.id
+      }
     default:
       return state;
   }

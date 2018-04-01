@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Buy = ({navigateTo, dataBuySell, operations}) => (  
+const Buy = ({navigateTo, dataBuySell, operations, operationsClick}) => (  
   <div>
     <br/>
     <form>
@@ -28,7 +28,7 @@ const Buy = ({navigateTo, dataBuySell, operations}) => (
           <input type="text" className="form-control" placeholder={dataBuySell[0].PEN} id="exampleForm2"/>
         </div>
         <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-          <button type="button" className="btn btn-success" onClick={()=> navigateTo('confirmation')}>Success</button>
+          <button type="button" className="btn btn-success" onClick={()=> {navigateTo('confirmation'); operationsClick(dataBuySell[0])}}>Success</button>
         </div>
       </div>
     </form>
