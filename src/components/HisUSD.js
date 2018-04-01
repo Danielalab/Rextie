@@ -1,5 +1,11 @@
 import React from 'react';
 
+const HIS_USD = [
+  {id:'1', bank:'BCP', typeAccount: 'Cuenta de ahorros', numAccount: '1586534215643278', typeOperation:'Venta', rode: '$ 900', date: '14/03/2018'},
+  {id:'2', bank:'BBVA', typeAccount: 'Cuenta corriente', numAccount: '1586534215643278', typeOperation:'Compra', rode: '$ 650', date: '26/03/2018'},
+  {id:'3', bank:'INTERBANK', typeAccount: 'Cuenta corriente', numAccount: '1586534215643278', typeOperation:'Venta', rode: '$ 1900', date: '30/03/2018'},
+]
+
 const HistoricalUSD = () => (
   <div className="container-fluid margin-his">
     <div className="tab-content table-historical">
@@ -9,34 +15,26 @@ const HistoricalUSD = () => (
             <thead>
                 <tr>
                   <th>#</th>
+                  <th>Banco</th>
                   <th>Cuenta</th>
-                  <th>Tipo de operación</th>
+                  <th>N° Cuenta</th>
+                  <th>Operación</th>
                   <th>Monto</th>
                   <th>Fecha</th>
                 </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                  <td>1586534215643278</td>
-                  <td>Venta</td>
-                  <td>$ 900</td>
-                  <td>14/03/2018</td>
+            {HIS_USD.map(list =>
+              (<tr>
+                <th scope="row">{list.id}</th>
+                <td>{list.bank}</td>
+                <td>{list.typeAccount}</td>
+                <td>{list.numAccount}</td>
+                <td>{list.typeOperation}</td>
+                <td>{list.rode}</td>
+                <td>{list.date}</td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                  <td>1586534215643278</td>
-                  <td>Compra</td>
-                  <td>$ 650</td>
-                  <td>14/03/2018</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                  <td>1586534215643278</td>
-                  <td>Venta</td>
-                  <td>$ 1900</td>
-                  <td>14/03/2018</td>
-              </tr>
+            ))}
             </tbody>
           </table>
         </div>
