@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MyFavorites = ({navigateTo}) => (
-  <div className="container-fluid">
+  <div className="container-fluid height">
     <ul className="nav md-pills nav-justified padding">
       <li className="nav-item">
         <a className="nav-link border-tab text-uppercase font-weight-bold active text-left border-botton"  href="#">Mis favoritos</a>
