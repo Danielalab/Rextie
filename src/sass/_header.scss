@@ -1,0 +1,18 @@
+/* header */
+  
+.btn-off {
+  padding: 1rem 1.2rem;
+}
+  
+.btn-off .font-2x {
+  font-size: 1.2rem;
+}
+  
+.btn-success {
+  background: linear-gradient(40deg,$color-prymary-two, $color-gradient-on);
+}
+  
+.navbar {
+  border-radius: $zero;
+  border-left: none;
+}

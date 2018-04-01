@@ -1,0 +1,30 @@
+/* Style for Side Nav */
+  
+.heigth {
+  height: 100vh;
+}
+
+.container-list {
+  list-style: none;
+}
+  
+.container-icon {
+  color: $color-prymary-two;
+  font-size: 1.5rem;
+}
+  
+.container-font, .color-3 {
+  color: $color-font;
+}
+
+.container-font {
+  font-family: 'Nunito', sans-serif;    
+}
+  
+.my-sm-3 {
+  margin: .5rem 0;
+}
+  
+.icons-sm {
+  cursor: $pointer;
+}

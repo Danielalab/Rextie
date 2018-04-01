@@ -89,7 +89,7 @@ function onChangeMoney(money) {
 }
 
 function onChangeNumberAccount(number) {
-  if (regExpNumber.test(number)) {
+  if (regExpNumber.test(number) && number.length === 16) {
     validateNumberAccount = true;
     allInputsValid()
   } else {

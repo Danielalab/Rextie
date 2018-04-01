@@ -1,0 +1,21 @@
+/* Global */
+body {
+  font-family: $font-family; 
+}
+  
+.padding {
+  padding: $zero;
+}
+  
+.md-form input[type=text]:focus:not([readonly]){
+  box-shadow: 0 1px 0 0 $color-prymary-one;
+  border-bottom: 1px solid $color-prymary-one;
+}
+  
+.color-2{
+  color: $color-prymary-one;
+}
+  
+ul {
+  list-style: none;
+}

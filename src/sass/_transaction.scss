@@ -1,0 +1,34 @@
+/* transaction */
+a.border-tab {
+  color: $color-secundary-one;
+  & :active {
+    color: $color-prymary-two;  
+    border-bottom: 4px solid $color-prymary-two;
+  }  
+}
+  
+.font-operator {
+  font-size: 1.5rem;
+}
+  
+.disabled-input {
+  background-color: $color-secundary-two;
+}
+  
+.text-sm-center {
+  text-align: center;
+} 
+  
+.btn-back {
+  background: linear-gradient(40deg,$color-prymary-one, $color-gradient-one);
+}
+  
+.gradient-grey {
+  background: linear-gradient(40deg,$color-secundary-two, $color-gradient-two);  
+}
+  
+.add-Account-icon {
+  color: $color-prymary-one;
+  cursor: $pointer;
+  font-size: 2.3rem;
+}

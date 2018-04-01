@@ -22,19 +22,23 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
         </div>
       </div>
       <div className="form-row justify-content-center">
-        <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="inputOrigin">Cuenta de Origen</label>
+        <div className="form-group col-9 col-md-8">
           <select id="inputOrigin" className="form-control">
             <option>Elige una Cuenta de Origen</option>
             <option>...</option>
           </select>
         </div>
-        <div className="form-group col-11 col-md-9">
-          <label className="text-uppercase" for="inputdestination">Cuenta de Destino</label>
+        <div clasName="col-2 col-md-2">
+          <span className="lnr lnr-plus-circle add-Account-icon m-2" onClick={() => navigateTo('addAccount')}></span>
+        </div>
+        <div className="form-group col-9 col-md-8">
           <select id="inputdestination" className="form-control">
             <option>Elige una Cuenta de Destino</option>
             <option>...</option>
           </select>
+        </div>
+        <div clasName="col-2 col-md-2">
+          <span className="lnr lnr-plus-circle add-Account-icon m-2" onClick={() => navigateTo('addAccount')}></span>
         </div>
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputAddress2">Teléfono</label>
@@ -44,7 +48,7 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
     </form>
     <div className="row justify-content-center">
       <a className="btn btn-back" onClick={() => navigateTo('transaction')}>Cambiar Operación</a>
-      <a className="btn btn-success" onClick={() => navigateTo('final-transaction')}>Aceptar</a> 
+      <button className="btn btn-success" onClick={() => navigateTo('final-transaction')}>Aceptar</button> 
     </div>     
     </div>
     </div>

@@ -1,0 +1,29 @@
+/* Style for Main */
+  
+.heigth-min {
+  min-height: 80vh;
+}
+  
+.container-main {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 85vh;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border-left: 1px solid $color-border-container;
+  height: 99.8vh;
+  overflow: auto;
+}
+  
+@media (min-width: 576px) { 
+  .text-md-left {
+    text-align: start;
+  }
+}
