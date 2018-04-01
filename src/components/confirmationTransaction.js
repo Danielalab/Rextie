@@ -14,11 +14,11 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
         </div>
         <div className="form-group col-11 col-md-3">
           <label className="text-uppercase" for="inputPassword4">{'Cliente ' + dataClick.typeOperation1 + ':'}</label>
-          <input type="text" className="form-control disabled-input disabled" id="inputPassword4" placeholder={'$ ' + dataClick.quantity}/>
+          <input type="text" className="form-control disabled-input disabled" id="inputPassword4" placeholder={dataClick.quantity + ' USD'}/>
         </div>
         <div className="form-group col-11 col-md-3">
           <label className="text-uppercase" for="operation">{'Cliente ' + dataClick.typeOperation2 + ':'}</label>
-          <input type="text" className="form-control disabled-input disabled" id="operation" placeholder={'S/. ' + dataClick.PEN}/>
+          <input type="text" className="form-control disabled-input disabled" id="operation" placeholder={dataClick.PEN + ' PEN'}/>
         </div>
       </div>
       <div className="form-row justify-content-center">

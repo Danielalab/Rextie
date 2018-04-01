@@ -7,14 +7,14 @@ const LISTS = [
 ]
 
 const Transaction = ({infoList, navigationInfo, navigateTo, operationsClick}) => (
-  <div className="p-5">
+  <div className="p-5 height">
     <ul className="nav md-pills nav-justified ">
     { LISTS.map(list =>  
       <li className="nav-item" key = {list.id} onClick={() => navigationInfo(list.id)}>
         <a className={list.class} data-toggle="tab" href="#" role="tab">{list.name}</a>
       </li>)}
     </ul>
-    <div className="tab-content">
+    <div className="tab-content transaction">
       <NavigationList infoList={infoList} navigateTo={navigateTo} operationsClick={operationsClick}/>
     </div>
   </div>

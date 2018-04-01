@@ -34,7 +34,7 @@ const Buy = ({navigateTo, dataBuySell, operations, operationsClick}) => (
     </form>
     <br/>
     <div className="d-flex justify-content-center">
-      <h5>Ahorra S/ {dataBuySell[0].saving} respecto al banco</h5>
+      <h5>Ahorra S/. {dataBuySell[0].saving} respecto al banco</h5>
     </div>
     <div className="d-flex justify-content-center">
       <p>Tipo de cambio vigente hasta 22:14</p>

@@ -1,50 +1,20 @@
 import React from 'react';
+import ListUserInformation from './ListUserInformation'
+
+const dataUser = [
+  {id:'nameUser', value: 'Daniela Gonzales', label: 'Nombre Completo'},
+  {id:'dni', value: 'DNI', label: 'Tipo de Documento de Identidad'},
+  {id:'numberdni', value: '74352136', label: 'Número de Documento'},
+  {id:'work', value: 'Estudiante', label: 'Ocupación u Oficio'},
+  {id:'phone', value: '995526665', label: 'Celular'},
+];
 
 const UserInformation = () => (
   <div className="container-fluid my-4">
-  <div className="row justify-content-center">
-    <div className="card col-10 card-border">
-      <div className="card-body">
-        <div className="md-form">
-          <input value="Daniela Gonzales" type="text" id="nameUser" className="form-control"/>
-          <label className="active" htmlFor="nameUser">Nombre Completo</label>
-        </div>
-      </div>
+    <div className="row justify-content-center">
+    { dataUser.map(list => <ListUserInformation {...list} key={list.id}/>)}
     </div>
-    <div className="card col-10 card-border">
-      <div className="card-body">
-        <div className="md-form">
-          <input value="DNI" type="text" id="dni" className="form-control"/>
-          <label className="active" htmlFor="dni">Tipo de Documento de Identidad</label>                    
-        </div>
-      </div>
-    </div>
-    <div className="card col-10 card-border">
-      <div className="card-body">
-        <div className="md-form">
-          <input value="74352136" type="text" id="numberdni" className="form-control"/>
-          <label className="active" htmlFor="numberdni">Número de Documento</label>                    
-        </div>
-      </div>
-    </div>
-    <div className="card col-10 card-border">
-      <div className="card-body">
-        <div className="md-form">
-          <input value="Estudiante" type="text" id="work" className="form-control"/>
-          <label className="active" htmlFor="work">Ocupación u Oficio</label>                    
-        </div>
-      </div>
-    </div>
-    <div className="card col-10 card-border">
-      <div className="card-body">
-        <div className="md-form">
-          <input value="995526665" type="text" id="phone" className="form-control"/>
-          <label className="active" htmlFor="phone">Celular</label>                    
-        </div>
-      </div>
-    </div>
-  </div>
   </div>
 );
 
-export default UserInformation
+export default UserInformation;

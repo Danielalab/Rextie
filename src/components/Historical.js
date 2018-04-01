@@ -7,7 +7,7 @@ const HISTORICAL = [
 ]
 
 const Historical = ({infoHis, navigationHis, navigateTo}) => (
-  <div className="p-5">
+  <div className="p-5 height">
     <ul className="nav md-pills nav-justified ">
     { HISTORICAL.map(list =>  
       <li className="nav-item" key = {list.id} onClick={() => navigationHis(list.id)}>

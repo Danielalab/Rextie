@@ -184,3 +184,15 @@ a.border-tab.active{
 .card-body {
   padding-bottom: 0;
 }
+
+.height {
+  min-height: 78%;
+}
+
+.transaction {
+  margin-top: 6rem;
+}
+
+.margin-his {
+  margin-top: 3.5rem;
+}

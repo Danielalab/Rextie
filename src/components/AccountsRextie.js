@@ -23,5 +23,3 @@ const AccountsRextie = ({navigateTo}) => (
 );
 
 export default AccountsRextie;
-
-// tipoCuenta: ['Corriente', ' Corriente'], moneda:['Dólares', 'Soles'], numCuenta: ['1931700523109', '1932357833093']

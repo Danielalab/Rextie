@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HistoricalPEN = () => (
-  <div className="container-fluid">
+  <div className="container-fluid margin-his">
     <div className="tab-content table-historical">
       <div className="card">
         <div className="card-body">
