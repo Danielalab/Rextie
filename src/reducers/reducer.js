@@ -1,9 +1,16 @@
 import { actionTypes } from '../actions/actions';
 
+const dataBuySell = [
+  {id: 'COMPRA' , quantity: 20, priceUSD: 3.2380, PEN: 64.76, saving: 0.92, typeOperation1: 'RECIBIRÁ', typeOperation2: 'ENVIARÁ'},
+  {id: 'VENTA', quantity: 20, priceUSD: 3.1900, PEN: 63.80, saving:  0.92, typeOperation1: 'ENVIARÁ', typeOperation2: 'RECIBIRÁ'}
+]
+
 const INITIAL_STATE = {
+  dataBuySell: dataBuySell,
   actualPage: 'transaction',
   infoList: 'buy',
-  infoHis: 'hisUSD'
+  infoHis: 'hisUSD',
+  dataClick: dataBuySell
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -22,6 +29,25 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         infoHis: action.his
+      }
+    case actionTypes.OPERATIONS:
+      return {
+        ...state,
+        dataBuySell: state.dataBuySell.map(change => {
+          if (change.id === action.id) {
+            let priceUSD = change.priceUSD;
+
+            change.quantity = action.val
+            const changeSpendPEN = change.quantity * priceUSD;
+            change.PEN = changeSpendPEN;
+          }
+          return change;
+        })
+      }
+    case actionTypes.OPERATIONS_CLICK:
+      return {
+        ...state,
+        dataClick: action.id
       }
     default:
       return state;

@@ -10,10 +10,10 @@ import FinalTransaction from './finalTransaction';
 import AddMyAccount from './AddMyAccount';
 import AddFavoriteAccount from './AddFavoriteAccount'
 
-const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationInfo, navigateTo }) => {
+const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationInfo, navigateTo, operationsClick, dataClick}) => {
   switch (actualPage) {
     case 'transaction':
-      return <Transaction infoList={infoList} navigationInfo={navigationInfo} navigateTo={navigateTo}/>;
+      return <Transaction infoList={infoList} navigationInfo={navigationInfo} navigateTo={navigateTo} operationsClick={operationsClick}/>;
     case 'userInfo':
       return <UserInformation/>;
     case 'myAccounts':
@@ -25,7 +25,7 @@ const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationIn
     case 'rextieAccounts':
       return <AccountsRextie navigateTo={navigateTo}/>;
     case 'confirmation' :
-      return <ConfirmationTransaction navigateTo={navigateTo}/>
+      return <ConfirmationTransaction navigateTo={navigateTo} dataClick={dataClick}/>
     case 'final-transaction' :
       return <FinalTransaction navigateTo={navigateTo}/>
     case 'addMyAccount':

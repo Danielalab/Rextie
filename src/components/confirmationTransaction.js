@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive, moneySend, moneyReceive, telefono }) => (
+const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive, moneySend, moneyReceive, telefono, dataClick}) => (
   <div className="container-fluid">
     <div className="row justify-content-center">
     <div className="card col-11 col-md-10 p-0 m-5">
@@ -10,15 +10,15 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
       <div className="form-row justify-content-center">
         <div className="form-group col-11 col-md-3">
           <label className="text-uppercase" for="operation">Tipo de Operación</label>
-          <input type="text" className="form-control disabled-input disabled" id="operation" placeholder={typeOperation}/>
+          <input type="text" className="form-control disabled-input disabled" id="operation" placeholder={dataClick.id}/>
         </div>
         <div className="form-group col-11 col-md-3">
-          <label className="text-uppercase" for="inputPassword4">Cliente Enviará:</label>
-          <input type="text" className="form-control disabled-input disabled" id="inputPassword4" placeholder={sendTo + moneySend}/>
+          <label className="text-uppercase" for="inputPassword4">{'Cliente ' + dataClick.typeOperation1 + ':'}</label>
+          <input type="text" className="form-control disabled-input disabled" id="inputPassword4" placeholder={'$ ' + dataClick.quantity}/>
         </div>
         <div className="form-group col-11 col-md-3">
-          <label className="text-uppercase" for="operation">Cliente Recibirá:</label>
-          <input type="text" className="form-control disabled-input disabled" id="operation" placeholder={toReceive + moneyReceive}/>
+          <label className="text-uppercase" for="operation">{'Cliente ' + dataClick.typeOperation2 + ':'}</label>
+          <input type="text" className="form-control disabled-input disabled" id="operation" placeholder={'S/. ' + dataClick.PEN}/>
         </div>
       </div>
       <div className="form-row justify-content-center">
