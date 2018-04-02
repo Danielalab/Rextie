@@ -12,9 +12,7 @@ function saveData(user) {
   firebase.database().ref('bd/' + user.uid).set(users);
 }
 
-//  const newPage =  firebaseApp.auth().onAuthStateChanged(user => console.log(user.uid)|| user);
-
-const Login = ({loginUser}) => (
+const Login = ({loginUser, dataFirebaseUser}) => (
   <div className="container-fluid">
     <button onClick={() => {
       var provider = new firebase.auth.GoogleAuthProvider();
@@ -27,6 +25,8 @@ const Login = ({loginUser}) => (
           loginUser('homePage');
         })
         .catch(error => console.log(`Error ${error.code}: ${error.message}`))
+
+        firebaseApp.auth().onAuthStateChanged(user => dataFirebaseUser(user))
       }}>
       Inicia Sesión
     </button>

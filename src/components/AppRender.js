@@ -2,12 +2,12 @@ import React from 'react';
 import Login from'./Login'
 import App from '../containers/app';
 
-const AppRender = ({initialPage, loginUser}) => {
+const AppRender = ({initialPage, loginUser, dataFirebaseUser, user}) => {
   switch (initialPage) {
     case 'homePage':
-      return <App/>;
+      return <App user={user}/>;
     case 'login':
-      return <Login loginUser={loginUser}/>;
+      return <Login loginUser={loginUser} dataFirebaseUser={dataFirebaseUser}/>;
     default:
       return null;
   }

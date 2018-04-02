@@ -4,7 +4,8 @@ export const actionTypes = {
   CHANGE_HIS: 'CHANGE_HIS',
   OPERATIONS: 'OPERATIONS',
   OPERATIONS_CLICK: 'OPERATIONS_CLICK',
-  LOGIN: 'LOGIN'
+  LOGIN: 'LOGIN',
+  DATA_USER: 'DATA_USER'
 };
 
 export const navigationTo = (page) => ({
@@ -35,5 +36,10 @@ export const operationClick = (id) => ({
 
 export const loginFirebase = (initialPage) => ({
   type: actionTypes.LOGIN,
-  initialPage
+  initialPage,
+})
+
+export const dataUser = (user) => ({
+  type: actionTypes.DATA_USER,
+  user,
 })
