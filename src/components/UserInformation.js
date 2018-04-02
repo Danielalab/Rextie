@@ -5,6 +5,7 @@ const dataUser = [
   {id:'nameUser', value: 'Daniela Gonzales', label: 'Nombre Completo'},
   {id:'dni', value: 'DNI', label: 'Tipo de Documento de Identidad'},
   {id:'numberdni', value: '74352136', label: 'Número de Documento'},
+  {id:'mail', value: 'danielagon.998@gmail.com', label: 'Correo Electronico'},
   {id:'work', value: 'Estudiante', label: 'Ocupación u Oficio'},
   {id:'phone', value: '995526665', label: 'Celular'},
 ];

@@ -48,9 +48,9 @@ const FinalTransaction= ({ navigateTo, dataClick }) => (
               <li>00316600300127342868</li>
               <li>Betsy Vidal</li>
           </ul>
-          </div>                         
+          </div>
           <div className="row justify-content-center">
-            <a className="btn btn-success" onClick={()=> navigateTo('transaction')}>Finalizar Operación</a>          
+            <a className="btn btn-success" onClick={()=> navigateTo('transaction')}>Finalizar Operación</a>
           </div>
         </div>
       </div>

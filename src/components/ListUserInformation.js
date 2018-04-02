@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListUserInformation = ({id, value, label}) => (
+const ListUserInformation = ({id, value, label, user}) => (
   <div className="card col-10 card-border">
     <div className="card-body">
       <div className="md-form">
