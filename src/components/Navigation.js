@@ -28,7 +28,7 @@ const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationIn
     case 'confirmation' :
       return <ConfirmationTransaction navigateTo={navigateTo} dataClick={dataClick}/>
     case 'final-transaction' :
-      return <FinalTransaction navigateTo={navigateTo}/>
+      return <FinalTransaction navigateTo={navigateTo}  dataClick={dataClick}/>
     case 'addAccount' :
       return <AddAccount navigateTo={navigateTo}/>
     case 'addMyAccount':
