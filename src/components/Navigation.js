@@ -1,6 +1,6 @@
 import React from 'react';
 import Transaction from './Transaction';
-import UserInformation from './UserInformation';
+import UserInformation from '../containers/UserInformation';
 import MyAccounts from './MyAccounts'
 import MyFavorites from './MyFavorites';
 import Historical from './Historical';

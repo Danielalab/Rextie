@@ -8,7 +8,8 @@ export const actionTypes = {
   DATA_USER: 'DATA_USER',
   GET_DATA_RENIEC: 'GET_DATA_RENIEC',
   VALIDATE_FORM: 'VALIDATE_FORM',
-  RESET_BUTTON: 'RESET_BUTTON'
+  RESET_BUTTON: 'RESET_BUTTON',
+  API_USER: 'API_USER'
 };
 
 export const navigationTo = (page) => ({
@@ -42,9 +43,10 @@ export const loginFirebase = (initialPage) => ({
   initialPage,
 })
 
-export const dataUser = (user) => ({
+export const dataUser = (val, id) => ({
   type: actionTypes.DATA_USER,
-  user,
+  val,
+  id
 })
 
 export const getDataReniec = (payload) => ({
@@ -59,4 +61,9 @@ export const validateForm = (isDisabled) => ({
 
 export const resetButton = () => ({
   type: actionTypes.RESET_BUTTON
+})
+
+export const apiUser = (user) => ({
+  type: actionTypes.API_USER,
+  user
 })

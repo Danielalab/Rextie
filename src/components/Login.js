@@ -78,8 +78,7 @@ const Login = ({loginUser, dataFirebaseUser, getReniecData, dataReniec, disabled
                   })
                   .catch(error => console.log(`Error ${error.code}: ${error.message}`))
 
-                  firebaseApp.auth().onAuthStateChanged(user => dataFirebaseUser(user))
-                  }}>
+                  firebaseApp.auth().onAuthStateChanged(user => {dataFirebaseUser(firebaseApp.database().ref('bd').child(user.uid).toJSON())})}}>
                   <i className="fa fa-google-plus mr-2 font-2x"></i>Google 
                 </button>
               </div>

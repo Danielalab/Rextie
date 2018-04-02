@@ -49,7 +49,7 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
     <div className="row justify-content-center">
       <a className="btn btn-back" onClick={() => navigateTo('transaction')}>Cambiar Operación</a>
       <button className="btn btn-success" onClick={() => navigateTo('final-transaction')}>Aceptar</button> 
-    </div>     
+    </div>
     </div>
     </div>
     </div>
