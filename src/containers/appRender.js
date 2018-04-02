@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import { loginFirebase, dataUser, getDataReniec } from '../actions/actions';
+import { loginFirebase, apiUser, dataUser, getDataReniec } from '../actions/actions';
 import axios from 'axios';
-import { loginFirebase, apiUser } from '../actions/actions';
 import AppRender from '../components/AppRender';
 
 const mapStateToProps = (state) => {
