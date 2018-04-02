@@ -8,7 +8,7 @@ import AccountsRextie from './AccountsRextie';
 import ConfirmationTransaction from './confirmationTransaction';
 import FinalTransaction from './finalTransaction';
 import AddAccount from './AddAccount';
-import AddMyAccount from './AddMyAccount';
+import AddMyAccount from '../containers/formAddMyAccount';
 import AddFavoriteAccount from './AddFavoriteAccount'
 
 const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationInfo, navigateTo, operationsClick, dataClick}) => {

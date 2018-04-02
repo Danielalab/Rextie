@@ -82,7 +82,7 @@ const AddAccount = ({navigateTo}) => (
       <div className="form-row justify-content-center">
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputOrigin">Categoría de la Cuenta</label>
-          <select id="inputOrigin" className="form-control" onChange={() => onChangeCategory(event.target.value)}>
+          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeCategory(event.target.value)}>
             <option value="">...</option>
             <option value="my-account">Cuenta Propia (mis cuentas)</option>
             <option value="my-favorites">Cuenta de Terceros (mis favoritos)</option>
@@ -90,7 +90,7 @@ const AddAccount = ({navigateTo}) => (
         </div>
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputdestination">Selecciona el Banco de tu Cuenta</label>
-          <select id="inputdestination" className="form-control" onChange={() => onChangeBank(event.target.value)}>
+          <select id="inputdestination" className="form-control" onChange={(event) => onChangeBank(event.target.value)}>
             <option value="">Selecciona un Banco</option>
             <option value="BBVA">BBVA</option>
             <option value="Scotiabank">Scotiabank</option>
@@ -113,21 +113,21 @@ const AddAccount = ({navigateTo}) => (
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <select id="inputOrigin" className="form-control" onChange={() => onChangeTypeAccount(event.target.value)}>
+          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeTypeAccount(event.target.value)}>
             <option value="">Elige el tipo de Cuenta</option>
             <option value="Ahorros">Cuenta de Ahorros</option>
             <option value="Corriente">Cuenta Corriente</option>            
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <select id="inputOrigin" className="form-control" onChange={() => onChangeMoney(event.target.value)}>
+          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeMoney(event.target.value)}>
             <option value="">Elige el tipo de Cambio</option>
             <option value="Soles">Soles</option>
             <option value="Dólares">Dólares</option>            
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <input type="text" className="form-control" id="card-number" placeholder="Número de Cuenta" onChange={() => onChangeNumberAccount(event.target.value)}/>
+          <input type="text" className="form-control" id="card-number" placeholder="Número de Cuenta" onChange={(event) => onChangeNumberAccount(event.target.value)}/>
         </div>
       </div>
     </form>

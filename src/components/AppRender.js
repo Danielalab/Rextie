@@ -1,13 +1,13 @@
 import React from 'react';
-import Login from'./Login'
+import Login from'../containers/formLogin'
 import App from '../containers/app';
 
-const AppRender = ({initialPage, loginUser, dataFirebaseUser, user}) => {
+const AppRender = ({initialPage, dataReniec, loginUser, dataFirebaseUser, getReniecData, user}) => {
   switch (initialPage) {
     case 'homePage':
       return <App user={user}/>;
     case 'login':
-      return <Login loginUser={loginUser} dataFirebaseUser={dataFirebaseUser}/>;
+      return <Login loginUser={loginUser} dataFirebaseUser={dataFirebaseUser} getReniecData={getReniecData} dataReniec={dataReniec}/>;
     default:
       return null;
   }

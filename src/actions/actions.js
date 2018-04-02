@@ -5,7 +5,10 @@ export const actionTypes = {
   OPERATIONS: 'OPERATIONS',
   OPERATIONS_CLICK: 'OPERATIONS_CLICK',
   LOGIN: 'LOGIN',
-  DATA_USER: 'DATA_USER'
+  DATA_USER: 'DATA_USER',
+  GET_DATA_RENIEC: 'GET_DATA_RENIEC',
+  VALIDATE_FORM: 'VALIDATE_FORM',
+  RESET_BUTTON: 'RESET_BUTTON'
 };
 
 export const navigationTo = (page) => ({
@@ -42,4 +45,18 @@ export const loginFirebase = (initialPage) => ({
 export const dataUser = (user) => ({
   type: actionTypes.DATA_USER,
   user,
+})
+
+export const getDataReniec = (payload) => ({
+  type: actionTypes.GET_DATA_RENIEC,
+  payload,
+});
+
+export const validateForm = (isDisabled) => ({
+  type: actionTypes.VALIDATE_FORM,
+  isDisabled
+})
+
+export const resetButton = () => ({
+  type: actionTypes.RESET_BUTTON
 })

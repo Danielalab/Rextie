@@ -12,7 +12,9 @@ const INITIAL_STATE = {
   infoHis: 'hisUSD',
   dataClick: dataBuySell,
   initialPage: 'login',
-  user: {name: 'Maria'}
+  user: {name: ''},
+  dataReniec:{},
+  disabledButton: true
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -63,6 +65,21 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         user: action.user
+      }
+    case actionTypes.VALIDATE_FORM:
+      return {
+        ...state,
+        disabledButton: action.isDisabled
+      }
+    case actionTypes.GET_DATA_RENIEC:
+      return {
+        ...state,
+        dataReniec: action.payload
+      }
+    case actionTypes.RESET_BUTTON:
+      return {
+        ...state,
+        disabledButton: true
       }
     default:
       return state;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { resetButton } from '../actions/actions';
 
 //  inicia código de validación de formulario para añadir mi cuenta
 
@@ -8,58 +9,58 @@ let validateBank = false;
 let validateNumberAccount = false;
 let validateTypeAccount = false;
 let validateMoney = false;
-let disabledButton = true 
+let disabledButton = true;
 
-function onChangeBank(bank) {
-  console.log(bank)
+function onChangeBank(bank, changeButton) {
   if (bank) {
     validateBank = true;
-    allInputsValid();
+    allInputsValid(changeButton);
   } else {
     validateBank = false;
     disabledButton = true
   }
 }
 
-function onChangeTypeAccount(account) {
+function onChangeTypeAccount(account, changeButton) {
   if (account) {
     validateTypeAccount = true;
-    allInputsValid();
+    allInputsValid(changeButton);
   } else {
     validateTypeAccount = false;
     disabledButton = true
   }
 }
 
-function onChangeMoney(money) {
+function onChangeMoney(money, changeButton) {
   if (money) {
     validateMoney = true;
-    allInputsValid();
+    allInputsValid(changeButton);
   } else {
     validateMoney = false;
     disabledButton = true;
   }
 }
 
-function onChangeNumberAccount(number) {
+function onChangeNumberAccount(number, changeButton) {
   if (regExpNumber.test(number)) {
     validateNumberAccount = true;
-    allInputsValid()
+    allInputsValid(changeButton)
   } else {
     validateNumberAccount = false;
     disabledButton = true
   }
 }
 
-function allInputsValid() {
+function allInputsValid(changeButton) {
   if (validateBank && validateTypeAccount && validateMoney && validateNumberAccount) {
     disabledButton = false;
+    changeButton(disabledButton);
   }
 }
 
 // inicia componente para añadir una nueva cuenta personal
 
-const AddMyAccount = ({navigateTo}) => (
+const AddMyAccount = ({navigateTo, disabledButton, changeButton, buttonReset}) => (
   <div className="container-fluid">
     <div className="row justify-content-center">
     <div className="card col-11 col-md-10 p-0 m-5">
@@ -69,7 +70,7 @@ const AddMyAccount = ({navigateTo}) => (
       <div className="form-row justify-content-center">
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputdestination">Selecciona el Banco de tu Cuenta</label>
-          <select id="inputdestination" className="form-control" onChange={(event) => onChangeBank(event.target.value) }>
+          <select id="inputdestination" className="form-control" onChange={(event) => onChangeBank(event.target.value, changeButton) }>
             <option value="">Selecciona tu Banco</option>
             <option value="BBVA">BBVA</option>
             <option value="Scotiabank">Scotiabank</option>
@@ -93,11 +94,11 @@ const AddMyAccount = ({navigateTo}) => (
         </div>
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="card-number">Número de Cuenta</label>
-          <input type="text" className="form-control" id="card-number" placeholder="Número de Cuenta" onChange={(event) => onChangeNumberAccount(event.target.value)}/>
+          <input type="text" className="form-control" id="card-number" placeholder="Número de Cuenta" onChange={(event) => onChangeNumberAccount(event.target.value, changeButton)}/>
         </div>
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputOrigin">Selecciona el tipo de Cuenta</label>
-          <select id="inputOrigin" className="form-control" onChange={(event)=> onChangeTypeAccount(event.target.value)}>
+          <select id="inputOrigin" className="form-control" onChange={(event)=> onChangeTypeAccount(event.target.value, changeButton)}>
             <option value="">Elige el tipo de Cuenta</option>
             <option value="Ahorros">Cuenta de Ahorros</option>
             <option value="Corriente">Cuenta Corriente</option>
@@ -105,10 +106,10 @@ const AddMyAccount = ({navigateTo}) => (
         </div>
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputOrigin">Selecciona el tipo de Cambio</label>
-          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeMoney(event.target.value)}>
+          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeMoney(event.target.value, changeButton)}>
             <option value="">Elige el tipo de Cambio</option>
-            <option value="">Soles</option>
-            <option value="">Dólares</option>
+            <option value="soles">Soles</option>
+            <option value="dólares">Dólares</option>
           </select>
         </div>
         <div className="form-check mb-2 mr-sm-2">
@@ -121,7 +122,7 @@ const AddMyAccount = ({navigateTo}) => (
     </form>
     <div className="row justify-content-center">
       <a className="btn btn-back" onClick={() => navigateTo('myAccounts')}>Cancelar</a>
-      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => navigateTo('myAccounts')}>Añadir</button> 
+      <button className="btn btn-success" disabled={ disabledButton ? "disabled" : false } onClick={() => { buttonReset(); navigateTo('myAccounts') }}>Añadir</button> 
     </div>     
     </div>
     </div>
