@@ -11,6 +11,7 @@ const INITIAL_STATE = {
   infoList: 'buy',
   infoHis: 'hisUSD',
   dataClick: dataBuySell,
+  initialPage: 'login',
   user: null
 }
 
@@ -52,6 +53,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         dataClick: action.id
+      }
+    case actionTypes.LOGIN:
+      return {
+        ...state,
+        initialPage: action.initialPage
       }
     default:
       return state;
