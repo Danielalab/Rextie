@@ -1,19 +1,10 @@
 import React from 'react';
 import ListUserInformation from './ListUserInformation'
 
-const dataUser = [
-  {id:'nameUser', value: 'Daniela Gonzales', label: 'Nombre Completo'},
-  {id:'dni', value: 'DNI', label: 'Tipo de Documento de Identidad'},
-  {id:'numberdni', value: '74352136', label: 'Número de Documento'},
-  {id:'mail', value: 'danielagon.998@gmail.com', label: 'Correo Electronico'},
-  {id:'work', value: 'Estudiante', label: 'Ocupación u Oficio'},
-  {id:'phone', value: '995526665', label: 'Celular'},
-];
-
-const UserInformation = () => (
+const UserInformation = ({dataUser, changeDataUser}) => (
   <div className="container-fluid my-4">
     <div className="row justify-content-center">
-    { dataUser.map(list => <ListUserInformation {...list} key={list.id}/>)}
+    { dataUser.map(list => <ListUserInformation {...list} key={list.id} changeDataUser={changeDataUser}/>)}
     </div>
   </div>
 );

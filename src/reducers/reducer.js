@@ -5,6 +5,15 @@ const dataBuySell = [
   {id: 'VENTA', quantity: 20, priceUSD: 3.1900, priceBanck: 3.20, PEN: 63.80, saving:  0.92, typeOperation1: 'ENVIARÁ', typeOperation2: 'RECIBIRÁ'}
 ]
 
+const dataUser = [
+  {id:'nameUser', value: 'Daniela Gonzales', label: 'Nombre Completo'},
+  {id:'dni', value: 'DNI', label: 'Tipo de Documento de Identidad'},
+  {id:'numberdni', value: '74352136', label: 'Número de Documento'},
+  {id:'mail', value: 'danielagon.998@gmail.com', label: 'Correo Electronico'},
+  {id:'work', value: 'Estudiante', label: 'Ocupación u Oficio'},
+  {id:'phone', value: '995526665', label: 'Celular'},
+];
+
 const INITIAL_STATE = {
   dataBuySell: dataBuySell,
   actualPage: 'transaction',
@@ -12,6 +21,7 @@ const INITIAL_STATE = {
   infoHis: 'hisUSD',
   dataClick: dataBuySell,
   initialPage: 'login',
+  dataUser: dataUser,
   user: {name: 'Maria'}
 }
 
@@ -60,6 +70,16 @@ export default (state = INITIAL_STATE, action) => {
         initialPage: action.initialPage
       }
     case actionTypes.DATA_USER:
+      return {
+        ...state,
+        dataUser: state.dataUser.map(change => {
+          if (change.id === action.id) {
+            change.value = action.val
+          }
+          return change;
+        })
+      }
+    case actionTypes.API_USER:
       return {
         ...state,
         user: action.user

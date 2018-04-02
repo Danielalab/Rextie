@@ -5,7 +5,8 @@ export const actionTypes = {
   OPERATIONS: 'OPERATIONS',
   OPERATIONS_CLICK: 'OPERATIONS_CLICK',
   LOGIN: 'LOGIN',
-  DATA_USER: 'DATA_USER'
+  DATA_USER: 'DATA_USER',
+  API_USER: 'API_USER'
 };
 
 export const navigationTo = (page) => ({
@@ -39,7 +40,13 @@ export const loginFirebase = (initialPage) => ({
   initialPage,
 })
 
-export const dataUser = (user) => ({
+export const dataUser = (val, id) => ({
   type: actionTypes.DATA_USER,
-  user,
+  val,
+  id
+})
+
+export const apiUser = (user) => ({
+  type: actionTypes.API_USER,
+  user
 })

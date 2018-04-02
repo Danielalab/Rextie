@@ -1,12 +1,18 @@
 import { connect } from 'react-redux';
-import { loginFirebase, dataUser } from '../actions/actions';
+import { dataUser } from '../actions/actions';
 import UserInformation from '../components/UserInformation';
 
 const mapStateToProps = (state) => {
-  const { user } = state.AppReducer;
+  const { dataUser } = state.AppReducer;
   return {
-    user:user
+    dataUser: dataUser
   }
 };
 
-export default connect(mapStateToProps)(UserInformation);
+const mapDispatchToProps = (dispatch) => ({
+  changeDataUser: (val, id) => {
+    dispatch(dataUser(val, id))
+  },
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserInformation);

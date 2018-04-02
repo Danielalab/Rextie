@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { loginFirebase, dataUser } from '../actions/actions';
+import { loginFirebase, apiUser } from '../actions/actions';
 import AppRender from '../components/AppRender';
 
 const mapStateToProps = (state) => {
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
   dataFirebaseUser: (user) => {
-    dispatch(dataUser(user))
+    dispatch(apiUser(user))
   },
 })
 
