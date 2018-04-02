@@ -68,6 +68,12 @@ a.border-tab {
 .font-operator {
   font-size: 1.5rem; }
 
+h5.card-title.color-2.font-weight-bold.font-size-title {
+  font-size: 1.2rem; }
+
+.font-size-regular {
+  font-size: 1rem; }
+
 .disabled-input {
   background-color: #F6F9FC; }
 
