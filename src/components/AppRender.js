@@ -1,13 +1,15 @@
 import React from 'react';
-import App from './app';
-import SignUp from'./SignUp'
+import Login from'./Login'
+import App from '../containers/app';
 
-const AppRender = ({user}) => {
-  switch (user) {
-    case user !== null:
+const AppRender = ({initialPage, loginUser}) => {
+  switch (initialPage) {
+    case 'homePage':
       return <App/>;
+    case 'login':
+      return <Login loginUser={loginUser}/>;
     default:
-      return <SignUp/>
+      return null;
   }
   return null;
 }
