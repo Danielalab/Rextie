@@ -15,6 +15,12 @@ body {
 ul {
   list-style: none; }
 
+.btn-neutro-1 {
+  background-color: #26A8E0; }
+
+.btn-neutro-2 {
+  background-color: #7ace3b; }
+
 /* Style for Side Nav */
 .heigth {
   height: 100vh; }

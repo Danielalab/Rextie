@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
+import Logo from './Logo';
 
 function googleLogin() {
   var provider = new firebase.auth.GoogleAuthProvider();
@@ -28,7 +29,27 @@ function saveData(user) {
 
 const SignUp = () => (
   <div className="container-fluid">
-    <button onClick={() => googleLogin()}>Sign Up</button>
+    <div className="row justify-content-center align-items-center heigth" >
+      <div className="col-11 col-md-5">
+      <div className="card mx-xl-5 pb-3">
+      <div className="card-body">
+        <Logo />
+        <form>
+          <p className="h5 text-center mb-4">Ingresa tu correo electrónico y contraseña para ingresar a Rextie.com.</p> 
+          <label for="defaultFormLoginEmailEx" className="grey-text">Tu email</label>
+          <input type="email" id="defaultFormLoginEmailEx" className="form-control"/>
+          <br/>
+          <label for="defaultFormLoginPasswordEx" className="grey-text">Tu contraseña</label>
+          <input type="password" id="defaultFormLoginPasswordEx" className="form-control"/>
+          <div className="text-center mt-4">
+            <button className="btn btn-neutro-1" type="submit" disabled>Iniciar sesión</button>
+            <button className="btn btn-neutro-2" onClick={() => googleLogin()}><i className="fa fa-google-plus mr-2 font-2x"></i>Google </button>            
+          </div>          
+        </form>
+      </div>
+      </div>
+      </div>
+    </div>
   </div>
 )
 
