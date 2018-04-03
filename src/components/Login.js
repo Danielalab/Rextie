@@ -48,6 +48,7 @@ const Login = ({loginUser, dataFirebaseUser, getReniecData, disabledButton, chan
           <div className="card-body">
             <Logo />
             <form>
+              <p>Holaaaaaaaaaaaaaaaa</p>
               <p className="h5 text-center mb-4">Ingresa tu número de DNI para ingresar a Rextie.com.</p>             
               <label htmlFor="dni" className="grey-text">Tu DNI (*)</label>
               <input type="text" id="dni" className="form-control" onChange={(event) => onChangeDNI(event.target.value, changeButton)}/>
