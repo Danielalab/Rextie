@@ -13,12 +13,12 @@ const DATA = [
   {id:'sell', vender: 'Vendiendo', recibir: 'recibir'}
 ];
 
-const App = ({actualPage, navigateTo, infoHis, navigationHis, infoList, navigationInfo, user}) => {
+const App = ({actualPage, navigateTo, infoHis, navigationHis, infoList, navigationInfo, user, dataReniec}) => {
   return (
     <div className="container-fluid p-0">
       <div className="row"></div>
       <div className="col-md-3 heigth">
-        <SideNav data={DATA} navigateTo={navigateTo} user={user}/>
+        <SideNav data={DATA} navigateTo={navigateTo}  dataReniec={dataReniec}/>
       </div>
       <div className="col-md-9 p-0">
         <Main data={DATA} actualPage={actualPage} infoHis={infoHis} navigationHis={navigationHis} infoList={infoList} navigationInfo={navigationInfo} navigateTo={navigateTo}/>
