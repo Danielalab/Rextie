@@ -10,11 +10,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  changeButton: (disabledButton) => {
+  formValidate: (disabledButton) => {
     dispatch(validateForm(disabledButton))
   },
   buttonReset: () => {
-      dispatch(resetButton())
+    dispatch(resetButton())
   }
 })
 

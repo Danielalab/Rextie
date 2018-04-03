@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from'./Login'
+import Login from'./Login';
 import App from '../containers/app';
 import LoginDni from '../containers/formLogin';
 

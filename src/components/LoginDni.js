@@ -8,25 +8,29 @@ let validateDni = false;
 let disabledButton = true;
 let dniUser = '';
 
-function onChangeDNI(dni) {
+function onChangeDNI(dni, formValidate) {
+  console.log('entra');  
   if (regExpNumber.test(dni) && dni.length === 8) {
     validateDni = true;
     dniUser = dni;
-    allInputsValid();
+    console.log('valido dni')
   } else {
     validateDni = false;
     disabledButton = true;
   }
+  allInputsValid(formValidate);  
 }
 
-function allInputsValid() {
+function allInputsValid(formValidate) {
   if (validateDni) {
     disabledButton = false;
-    // changeButton(disabledButton);
+  } else {
+    disabledButton = true;
   }
+  formValidate(disabledButton);  
 }
 
-const LoginDni = ( getReniecData, disabledButton, changeButton, buttonReset) => {
+const LoginDni = ({ getReniecData, disabledButton, formValidate, buttonReset}) => {
   return(  
   <div className="container-fluid">
     <div className="row justify-content-center align-items-center heigth" >
@@ -37,11 +41,12 @@ const LoginDni = ( getReniecData, disabledButton, changeButton, buttonReset) => 
             <form>
               <p className="h5 text-center mb-4">Ingresa tu número de DNI para ingresar a Rextie.com.</p>             
               <label htmlFor="dni" className="grey-text">Tu DNI (*)</label>
-              <input type="text" id="dni" className="form-control" onChange={() => changeButton(false)}/>
+              <input type="text" id="dni" className="form-control" onChange={(event) => onChangeDNI(event.target.value, formValidate)}/>
               <div className="text-center mt-4">
                 <button className="btn btn-neutro-2"
                   disabled={ disabledButton ? "disabled" : false }
                   onClick={(event) => {
+                    event.preventDefault();
                     buttonReset();
                     getReniecData(dniUser);
                   }}>
