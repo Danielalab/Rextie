@@ -34,7 +34,6 @@ const mapDispatchToProps = (dispatch) => ({
       },
     })   
       .then( response  => { 
-        console.log(response);
         dispatch(getDataReniec(response.data))
       }) 
   }
