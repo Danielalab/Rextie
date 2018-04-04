@@ -1,6 +1,7 @@
 import React from 'react';
 import SideNav from './SideNav'
 import Main from './Main';
+import NavBarMobile from './navBarMobile';
 
 const DATA = [
   {id:'transaction', icon: 'lnr lnr-chevron-right container-icon', name: 'Comprar / Vender'},
@@ -16,8 +17,8 @@ const DATA = [
 const App = ({actualPage, navigateTo, infoHis, navigationHis, infoList, navigationInfo, user, dataReniec}) => {
   return (
     <div className="container-fluid p-0">
-      <div className="row"></div>
-      <div className="col-md-3 heigth">
+      <NavBarMobile data={DATA} navigateTo={navigateTo}  dataReniec={dataReniec}/>
+      <div className="d-none d-sm-block col-md-3 heigth">
         <SideNav data={DATA} navigateTo={navigateTo}  dataReniec={dataReniec}/>
       </div>
       <div className="col-md-9 p-0">

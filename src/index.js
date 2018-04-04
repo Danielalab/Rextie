@@ -4,10 +4,10 @@ import { render } from 'react-dom';
 import { firebaseApp } from './firebase';
 import AppRender from './containers/appRender';
 import store from './store';
-import './style.css';
+import './css/main.css';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render (
+ReactDOM.render(
   <Provider store={store}>
     <AppRender/>
   </Provider>,

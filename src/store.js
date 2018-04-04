@@ -8,10 +8,10 @@ const rootReducer = combineReducers({
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
-const store = createStoreWithMiddleware(
+const storeMiddleware = createStoreWithMiddleware(
   rootReducer,
   // inyectamos la capacidad de usar Redux Dev Tools
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
-export default store;
+export default storeMiddleware;

@@ -14,6 +14,8 @@ const dataUser = [
   {id:'phone', value: '995526665', label: 'Celular'},
 ];
 
+const account = {categoryAccount: '', bank: '', typeAccount: '', typeChange: '', numberAccount: ''}
+
 const INITIAL_STATE = {
   dataBuySell: dataBuySell,
   actualPage: 'transaction',
@@ -25,7 +27,7 @@ const INITIAL_STATE = {
   disabledButton: true,
   dataUser: dataUser,
   user: {name: 'Maria'},
-  account: {}
+  account: account
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -122,7 +124,7 @@ export default (state = INITIAL_STATE, action) => {
     case actionTypes.GET_VALUE:
       return {
         ...state,
-        account: true
+        account: action.val
       }
     default:
       return state;

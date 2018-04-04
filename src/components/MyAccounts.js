@@ -2,12 +2,12 @@ import React from 'react';
 import ListMyAccount from './ListMyAccount'
 
 const MY_ACCOUNTS = [
-  {id:'1', bank:'BCP', typeAccount: 'Cuenta de ahorros', numAccount: '1586534215643278'},
-  {id:'2', bank:'BBVA', typeAccount: 'Cuenta corriente', numAccount: '1586534215643278'},
-  {id:'3', bank:'INTERBANK', typeAccount: 'Cuenta corriente', numAccount: '1586534215643278'},
-  {id:'4', bank:'SCOTIABANK', typeAccount: 'Cuenta de ahorros', numAccount: '1586534215643278'},
-  {id:'5', bank:'CITYBANK', typeAccount: 'Cuenta corriente', numAccount: '1586534215643278'},
-  {id:'6', bank:'BNP', typeAccount: 'Cuenta de ahorros', numAccount: '1586534215643278'}
+  {id:'1', categoryAccount:'Cuenta propia', bank:'BCP', typeAccount: 'Cuenta corriente',typeChange: 'Soles', numAccount: '1586534215643278'},
+  {id:'2', categoryAccount:'Cuenta terceros', bank:'BBVA', typeAccount: 'Cuenta corriente', typeChange: 'Dólares', numAccount: '1586534215643278'},
+  {id:'3', categoryAccount:'Cuenta terceros', bank:'INTERBANK', typeAccount: 'Cuenta corriente', typeChange: 'Dólares', numAccount: '1586534215643278'},
+  {id:'4', categoryAccount:'Cuenta terceros', bank:'SCOTIABANK', typeAccount: 'Cuenta de ahorros', typeChange: 'Soles', numAccount: '1586534215643278'},
+  {id:'5', categoryAccount:'Cuenta propia', bank:'CITYBANK', typeAccount: 'Cuenta corriente', typeChange: 'Dólares', numAccount: '1586534215643278'},
+  {id:'6', categoryAccount:'Cuenta terceros', bank:'BNP', typeAccount: 'Cuenta de ahorros', typeChange: 'Soles', numAccount: '1586534215643278'}
 ]
 
 const MyAccounts = ({navigateTo}) => (

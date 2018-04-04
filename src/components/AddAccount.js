@@ -26,7 +26,7 @@ function onChangeCategory(category, changeButton) {
 }
 
 function onChangeBank(bank, changeButton) {
-  if (bank) {
+  if (bank) {    
     validateBank = true;
   } else {
     validateBank = false;
@@ -36,7 +36,7 @@ function onChangeBank(bank, changeButton) {
 }
 
 function onChangeTypeAccount(account, changeButton) {
-  if (account) {
+  if (account) {    
     validateTypeAccount = true;
   } else {
     validateTypeAccount = false;
@@ -57,7 +57,7 @@ function onChangeMoney(money, changeButton) {
 
 function onChangeNumberAccount(number, changeButton) {
   if (regExpNumber.test(number) && number.length === 16) {
-    validateNumberAccount = true;
+    validateNumberAccount = true;    
   } else {
     validateNumberAccount = false;
     disabledButton = true
@@ -67,14 +67,22 @@ function onChangeNumberAccount(number, changeButton) {
 
 function allInputsValid(changeButton) {
   if (validateCategory && validateBank && validateTypeAccount && validateMoney && validateNumberAccount) {
-    disabledButton = false;
+    disabledButton = false;    
   } else {
     disabledButton = true;
   }
   changeButton(disabledButton);
 }
 
-
+function reset(changeButton) {
+  validateCategory = false;
+  validateBank = false;
+  validateTypeAccount = false;
+  validateMoney = false;
+  validateNumberAccount = false;
+  disabledButton = true;
+  changeButton(disabledButton);
+}
 // inicia componente
 
 const AddAccount = ({navigateTo, disabledButton, changeButton, buttonReset}) => (
@@ -89,9 +97,14 @@ const AddAccount = ({navigateTo, disabledButton, changeButton, buttonReset}) => 
           <label className="text-uppercase" for="inputOrigin">Categoría de la Cuenta</label>
           <select id="inputOrigin" className="form-control" onChange={(event) => {
             onChangeCategory(event.target.value, changeButton); 
-            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('account').push({
-              valueAccount: event.target.options[event.target.selectedIndex].text
-            }));}}>
+
+            const value = event.target.value
+            const option = event.target.options[event.target.selectedIndex].text
+            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('account').child(value)
+              .push({
+              valueAccount: option
+              }))
+            }}>
             <option value="">...</option>
             <option value="my-account">Cuenta Propia (mis cuentas)</option>
             <option value="my-favorites">Cuenta de Terceros (mis favoritos)</option>
@@ -99,7 +112,16 @@ const AddAccount = ({navigateTo, disabledButton, changeButton, buttonReset}) => 
         </div>
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputdestination">Selecciona el Banco de tu Cuenta</label>
-          <select id="inputdestination" className="form-control" onChange={(event) => onChangeBank(event.target.value, changeButton)}>
+          <select id="inputdestination" className="form-control" onChange={(event) => {
+            onChangeBank(event.target.value, changeButton);
+            
+            const value = event.target.value
+            const option = event.target.options[event.target.selectedIndex].text
+            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('account').child('bank').child(value)
+              .push({
+              valueBank: option
+              }))
+            }}>
             <option value="">Selecciona un Banco</option>
             <option value="BBVA">BBVA</option>
             <option value="Scotiabank">Scotiabank</option>
@@ -122,27 +144,53 @@ const AddAccount = ({navigateTo, disabledButton, changeButton, buttonReset}) => 
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeTypeAccount(event.target.value, changeButton)}>
+          <select id="inputOrigin" className="form-control" onChange={(event) => {
+            onChangeTypeAccount(event.target.value, changeButton);
+
+            const value = event.target.value
+            const option = event.target.options[event.target.selectedIndex].text
+            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('account').child('typeAccount').child(value)
+              .push({
+              valueAccount: option
+              }))
+            }}>
             <option value="">Elige el tipo de Cuenta</option>
             <option value="Ahorros">Cuenta de Ahorros</option>
-            <option value="Corriente">Cuenta Corriente</option>            
+            <option value="Corriente">Cuenta Corriente</option>
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeMoney(event.target.value, changeButton)}>
+          <select id="inputOrigin" className="form-control" onChange={(event) => {
+            onChangeMoney(event.target.value, changeButton);
+            
+            const value = event.target.value
+            const option = event.target.options[event.target.selectedIndex].text
+            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('account').child('typeChange').child(value)
+              .push({
+              valueChange: option
+              }))
+            }}>
             <option value="">Elige el tipo de Cambio</option>
             <option value="Soles">Soles</option>
-            <option value="Dólares">Dólares</option>            
+            <option value="Dólares">Dólares</option>
           </select>
         </div>
         <div className="form-group col-11 col-md-9">
-          <input type="text" className="form-control" id="card-number" placeholder="Número de Cuenta" onChange={(event) => onChangeNumberAccount(event.target.value, changeButton)}/>
+          <input type="text" className="form-control" id="card-number" placeholder="Número de Cuenta" onChange={(event) => {
+            onChangeNumberAccount(event.target.value, changeButton);
+
+            const value = event.target.value
+            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('account').child('numberAccount')
+              .push({
+              valueNumberAccount: value
+              }))
+            }}/>
         </div>
       </div>
     </form>
     <div className="row justify-content-center">
-      <a className="btn btn-back" onClick={() => navigateTo('confirmation')}>Cancelar</a>
-      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => {buttonReset() ,navigateTo('confirmation')}}>Añadir</button> 
+      <a className="btn btn-back" onClick={() => {reset(changeButton) , navigateTo('confirmation')}}>Cancelar</a>
+      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => {reset(changeButton),buttonReset() ,navigateTo('confirmation')}}>Añadir</button> 
     </div>     
     </div>
     </div>
