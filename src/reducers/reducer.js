@@ -53,9 +53,26 @@ export default (state = INITIAL_STATE, action) => {
 
             change.quantity = action.val
             const changeSpendPEN = change.quantity * priceUSD;
-            change.PEN = changeSpendPEN;
+            change.PEN = (changeSpendPEN).toFixed(2);
 
             const changeSaving = ((-1) * (changeSpendPEN - change.quantity * change.priceBanck)).toFixed(2);
+            change.saving = changeSaving;
+          }
+          return change;
+        })
+      }
+    case actionTypes.OPERATIONS_REVERSE:
+      return {
+        ...state,
+        dataBuySell: state.dataBuySell.map(change => {
+          if (change.id === action.id) {
+            let priceUSD = change.priceUSD;
+
+            change.PEN = action.val
+            const changeSpendQuantity = change.PEN / priceUSD;
+            change.quantity = (changeSpendQuantity).toFixed(2);
+
+            const changeSaving = ((-1) * (change.PEN - change.quantity * change.priceBanck)).toFixed(2);
             change.saving = changeSaving;
           }
           return change;
