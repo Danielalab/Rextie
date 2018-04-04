@@ -3,6 +3,7 @@ export const actionTypes = {
   CHANGE : 'CHANGE',
   CHANGE_HIS: 'CHANGE_HIS',
   OPERATIONS: 'OPERATIONS',
+  OPERATIONS_REVERSE: 'OPERATIONS_REVERSE',
   OPERATIONS_CLICK: 'OPERATIONS_CLICK',
   LOGIN: 'LOGIN',
   DATA_USER: 'DATA_USER',
@@ -29,6 +30,12 @@ export const navigationTranHis = (his) => ({
 
 export const operation = (val, id) => ({
   type: actionTypes.OPERATIONS,
+  val,
+  id
+})
+
+export const operationsReverse = (val, id) => ({
+  type: actionTypes.OPERATIONS_REVERSE,
   val,
   id
 })
