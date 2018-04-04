@@ -24,7 +24,7 @@ function onChangeCategory(category, changeButton) {
 }
 
 function onChangeBank(bank, changeButton) {
-  if (bank) {
+  if (bank) {    
     validateBank = true;
   } else {
     validateBank = false;
@@ -34,7 +34,7 @@ function onChangeBank(bank, changeButton) {
 }
 
 function onChangeTypeAccount(account, changeButton) {
-  if (account) {
+  if (account) {    
     validateTypeAccount = true;
   } else {
     validateTypeAccount = false;
@@ -55,7 +55,7 @@ function onChangeMoney(money, changeButton) {
 
 function onChangeNumberAccount(number, changeButton) {
   if (regExpNumber.test(number) && number.length === 16) {
-    validateNumberAccount = true;
+    validateNumberAccount = true;    
   } else {
     validateNumberAccount = false;
     disabledButton = true
@@ -63,16 +63,24 @@ function onChangeNumberAccount(number, changeButton) {
   allInputsValid(changeButton)  
 }
 
-function allInputsValid(changeButton, changeButton) {
+function allInputsValid(changeButton) {
   if (validateCategory && validateBank && validateTypeAccount && validateMoney && validateNumberAccount) {
-    disabledButton = false;
+    disabledButton = false;    
   } else {
     disabledButton = true;
   }
   changeButton(disabledButton);
 }
 
-
+function reset(changeButton) {
+  validateCategory = false;
+  validateBank = false;
+  validateTypeAccount = false;
+  validateMoney = false;
+  validateNumberAccount = false;
+  disabledButton = true;
+  changeButton(disabledButton);
+}
 // inicia componente
 
 const AddAccount = ({navigateTo, disabledButton, changeButton, buttonReset}) => (
@@ -135,8 +143,8 @@ const AddAccount = ({navigateTo, disabledButton, changeButton, buttonReset}) => 
       </div>
     </form>
     <div className="row justify-content-center">
-      <a className="btn btn-back" onClick={() => navigateTo('confirmation')}>Cancelar</a>
-      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => {buttonReset() ,navigateTo('confirmation')}}>Añadir</button> 
+      <a className="btn btn-back" onClick={() => {reset(changeButton) , navigateTo('confirmation')}}>Cancelar</a>
+      <button className="btn btn-success" disabled={disabledButton ? "disabled" : false} onClick={() => {reset(changeButton),buttonReset() ,navigateTo('confirmation')}}>Añadir</button> 
     </div>     
     </div>
     </div>
