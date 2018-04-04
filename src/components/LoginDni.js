@@ -31,7 +31,7 @@ function allInputsValid(formValidate) {
 const LoginDni = ({ getReniecData, loginUser, disabledButton, formValidate, buttonReset}) => {
   return(  
   <div className="container-fluid">
-    <div className="row justify-content-center align-items-center heigth" >
+    <div className="row justify-content-center align-items-center heigth background" >
       <div className="col-11 col-md-5">
         <div className="card mx-xl-5 pb-3">
           <div className="card-body">

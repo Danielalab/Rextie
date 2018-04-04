@@ -16,9 +16,6 @@ const mapDispatchToProps = (dispatch) => ({
   buttonReset: () => {
       dispatch(resetButton())
   },
-  getValue: (val, text) => {
-    dispatch(getValue(val, text))
-  }
 })
 
 export default connect( mapStateToProps, mapDispatchToProps)(AddAccount);

@@ -12,6 +12,8 @@ export const actionTypes = {
   RESET_BUTTON: 'RESET_BUTTON',
   API_USER: 'API_USER',
   GET_VALUE: 'GET_VALUE',
+  GET_VALUE_ORIGEN: 'GET_VALUE_ORIGEN',
+  GET_VALUE_DESTINATION: 'GET_VALUE_DESTINATION',
   GET_DATA_FIREBASE: 'GET_DATA_FIREBASE'
 };
 
@@ -79,8 +81,17 @@ export const apiUser = (user) => ({
 
 export const getValue = (val) => ({
   type: actionTypes.GET_VALUE,
+  val
+})
+
+export const getValueOrigen = (val) => ({
+  type: actionTypes.GET_VALUE_ORIGEN,
+  val
+})
+
+export const getValueDestination = (val) => ({
+  type: actionTypes.GET_VALUE_DESTINATION,
   val,
-  text
 })
 
 export const getDataFirebase = () => ({

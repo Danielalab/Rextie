@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FinalTransaction= ({ navigateTo, dataClick }) => (
+const FinalTransaction= ({ navigateTo, dataClick, dataDestination, dataSend, dataSend1}) => (
   <div className="container-fluid">
     <div  className="row justify-content-center">
       <div className="card col-11 col-md-9 p-3 my-5">
         <div className="card-body">
-          <p className="card-text">Tu operación con código N° 12 ha sido registrada con éxito el día . 
+          <p className="card-text">Tu operación con código N° 12 ha sido registrada con éxito el día 4/04/2018. 
             Deberás realizar la transferencia en un máximo de 15 minutos para mantener el tipo de cambio acordado. Debes relizar sólo 2 pasos 
             para culminar tu operación.</p>
           <h5 className="card-title color-2 font-weight-bold font-size-title">Paso 1: Deposita tu dinero a una cuenta de Rextie</h5>
@@ -20,7 +20,7 @@ const FinalTransaction= ({ navigateTo, dataClick }) => (
           </ul>
           <ul className="col-5 col-md-5">
               <li className="font-size-regular">{('COMPRA' === dataClick.id) ? 'S/ ' + dataClick.PEN : '$ ' + dataClick.quantity}</li>
-              <li className="font-size-regular">Scotiabank</li>
+              <li className="font-size-regular">BCP</li>
               <li className="font-size-regular">Interbank</li>
               <li className="font-size-regular">00316600300127342868</li>
               <li className="font-size-regular">REXTIE SAC</li>
@@ -39,8 +39,8 @@ const FinalTransaction= ({ navigateTo, dataClick }) => (
           <ul className="col-5 col-md-5">
               <li className="font-size-regular">{('COMPRA' === dataClick.id) ? '$ ' + dataClick.quantity : 'S/ ' + dataClick.PEN}</li>
               <li className="font-size-regular">{dataClick.priceUSD}</li>
-              <li className="font-size-regular">BCP</li>
-              <li className="font-size-regular">00316600300127342868</li>
+              <li className="font-size-regular">Interbank</li>
+              <li className="font-size-regular">4485 5680 5607 0990</li>
               <li className="font-size-regular">Betsy Vidal</li>
           </ul>
           </div>

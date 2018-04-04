@@ -11,7 +11,7 @@ import AddAccount from '../containers/formAddAccount';
 import AddMyAccount from '../containers/formAddMyAccount';
 import AddFavoriteAccount from '../containers/formAddMyFavorites'
 
-const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationInfo, navigateTo, operationsClick, dataClick}) => {
+const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationInfo, navigateTo, operationsClick, dataClick, getValue, getValueDestination, getValueOrigen, dataDestination, dataSend, dataSend1}) => {
   switch (actualPage) {
     case 'transaction':
       return <Transaction infoList={infoList} navigationInfo={navigationInfo} navigateTo={navigateTo} operationsClick={operationsClick}/>;
@@ -26,9 +26,9 @@ const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationIn
     case 'rextieAccounts':
       return <AccountsRextie navigateTo={navigateTo}/>;
     case 'confirmation' :
-      return <ConfirmationTransaction navigateTo={navigateTo} dataClick={dataClick}/>
+      return <ConfirmationTransaction navigateTo={navigateTo} dataClick={dataClick} getValueOrigen={getValueOrigen} getValue={getValue} getValueDestination={getValueDestination}/>
     case 'final-transaction' :
-      return <FinalTransaction navigateTo={navigateTo}  dataClick={dataClick}/>
+      return <FinalTransaction navigateTo={navigateTo}  dataClick={dataClick} dataDestination={dataDestination} dataSend={dataSend} dataSend1={dataSend1}/>
     case 'addAccount' :
       return <AddAccount navigateTo={navigateTo}/>
     case 'addMyAccount':
