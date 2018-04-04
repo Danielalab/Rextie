@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { validateForm, resetButton } from '../actions/actions';
-import LoginDni from '../components/LoginDni';
+import AddFavoriteAccount from '../components/AddFavoriteAccount';
 
 const mapStateToProps = (state) => {
   const { disabledButton } = state.AppReducer;
@@ -10,12 +10,12 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  formValidate: (disabledButton) => {
+  changeButton: (disabledButton) => {
     dispatch(validateForm(disabledButton))
   },
   buttonReset: () => {
-    dispatch(resetButton())
+      dispatch(resetButton())
   }
 })
 
-export default connect( mapStateToProps, mapDispatchToProps)(LoginDni);
+export default connect( mapStateToProps, mapDispatchToProps)(AddFavoriteAccount);

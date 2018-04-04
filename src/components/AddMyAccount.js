@@ -14,48 +14,50 @@ let disabledButton = true;
 function onChangeBank(bank, changeButton) {
   if (bank) {
     validateBank = true;
-    allInputsValid(changeButton);
   } else {
     validateBank = false;
     disabledButton = true
   }
+  allInputsValid(changeButton);  
 }
 
 function onChangeTypeAccount(account, changeButton) {
   if (account) {
     validateTypeAccount = true;
-    allInputsValid(changeButton);
   } else {
     validateTypeAccount = false;
     disabledButton = true
   }
+  allInputsValid(changeButton);  
 }
 
 function onChangeMoney(money, changeButton) {
   if (money) {
     validateMoney = true;
-    allInputsValid(changeButton);
   } else {
     validateMoney = false;
     disabledButton = true;
   }
+  allInputsValid(changeButton);  
 }
 
 function onChangeNumberAccount(number, changeButton) {
   if (regExpNumber.test(number)) {
     validateNumberAccount = true;
-    allInputsValid(changeButton)
   } else {
     validateNumberAccount = false;
     disabledButton = true
   }
+  allInputsValid(changeButton)  
 }
 
 function allInputsValid(changeButton) {
   if (validateBank && validateTypeAccount && validateMoney && validateNumberAccount) {
     disabledButton = false;
-    changeButton(disabledButton);
+  } else {
+    disabledButton = true;
   }
+  changeButton(disabledButton);  
 }
 
 // inicia componente para añadir una nueva cuenta personal
