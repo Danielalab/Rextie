@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { validateForm, resetButton } from '../actions/actions';
-import App from '../components/app';
-import AddMyAccount from '../components/AddMyAccount';
+import AddAccount from '../components/AddAccount';
 
 const mapStateToProps = (state) => {
   const { disabledButton } = state.AppReducer;
@@ -19,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-export default connect( mapStateToProps, mapDispatchToProps)(AddMyAccount);
+export default connect( mapStateToProps, mapDispatchToProps)(AddAccount);

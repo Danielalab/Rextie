@@ -7,7 +7,7 @@ import Historical from './Historical';
 import AccountsRextie from './AccountsRextie';
 import ConfirmationTransaction from './confirmationTransaction';
 import FinalTransaction from './finalTransaction';
-import AddAccount from './AddAccount';
+import AddAccount from '../containers/formAddAccount';
 import AddMyAccount from '../containers/formAddMyAccount';
 import AddFavoriteAccount from '../containers/formAddMyFavorites'
 
