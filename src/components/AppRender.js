@@ -10,7 +10,7 @@ const AppRender = ({initialPage, dataReniec, loginUser, dataFirebaseUser, getRen
     case 'login':
       return <Login loginUser={loginUser} dataFirebaseUser={dataFirebaseUser}/>;
     case 'loginDni':
-      return <LoginDni getReniecData={getReniecData}/>;
+      return <LoginDni getReniecData={getReniecData} loginUser={loginUser} />;
     default:
       return null;
   }

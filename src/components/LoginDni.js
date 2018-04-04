@@ -9,11 +9,9 @@ let disabledButton = true;
 let dniUser = '';
 
 function onChangeDNI(dni, formValidate) {
-  console.log('entra');  
   if (regExpNumber.test(dni) && dni.length === 8) {
     validateDni = true;
     dniUser = dni;
-    console.log('valido dni')
   } else {
     validateDni = false;
     disabledButton = true;
@@ -30,7 +28,7 @@ function allInputsValid(formValidate) {
   formValidate(disabledButton);  
 }
 
-const LoginDni = ({ getReniecData, disabledButton, formValidate, buttonReset}) => {
+const LoginDni = ({ getReniecData, loginUser, disabledButton, formValidate, buttonReset}) => {
   return(  
   <div className="container-fluid">
     <div className="row justify-content-center align-items-center heigth" >
@@ -46,9 +44,9 @@ const LoginDni = ({ getReniecData, disabledButton, formValidate, buttonReset}) =
                 <button className="btn btn-neutro-2"
                   disabled={ disabledButton ? "disabled" : false }
                   onClick={(event) => {
-                    event.preventDefault();
-                    buttonReset();
                     getReniecData(dniUser);
+                    buttonReset();                    
+                    loginUser('homePage');
                   }}>
                   Continuar
                 </button>

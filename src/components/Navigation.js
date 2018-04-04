@@ -9,7 +9,7 @@ import ConfirmationTransaction from './confirmationTransaction';
 import FinalTransaction from './finalTransaction';
 import AddAccount from './AddAccount';
 import AddMyAccount from '../containers/formAddMyAccount';
-import AddFavoriteAccount from './AddFavoriteAccount'
+import AddFavoriteAccount from '../containers/formAddMyFavorites'
 
 const Navigation = ({ actualPage, infoList, infoHis, navigationHis, navigationInfo, navigateTo, operationsClick, dataClick}) => {
   switch (actualPage) {
