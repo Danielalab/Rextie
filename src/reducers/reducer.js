@@ -52,7 +52,7 @@ export default (state = INITIAL_STATE, action) => {
             let priceUSD = change.priceUSD;
 
             change.quantity = action.val
-            const changeSpendPEN = change.quantity / priceUSD;
+            const changeSpendPEN = change.quantity * priceUSD;
             change.PEN = (changeSpendPEN).toFixed(2);
 
             const changeSaving = ((-1) * (changeSpendPEN - change.quantity * change.priceBanck)).toFixed(2);

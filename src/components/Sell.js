@@ -6,6 +6,10 @@ const Sell = ({navigateTo, dataBuySell, operations, operationsReverse,operations
     <form>
       <div className="row align-items-end">
         <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
+          <label className="font-weight-bold" for="exampleForm2">Vender</label>
+          <h3 className="title-cuenta-rextie d-flex align-items-center change">Dólares</h3>
+        </div>
+        <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
           <label className="font-weight-bold" for="exampleForm1">Cantidad</label>
           <input type="text" className="form-control" value={dataBuySell[1].quantity} placeholder={dataBuySell[1].quantity} onChange={(event)=> operations(event.target.value, dataBuySell[1].id)} id="exampleForm1"/>
         </div>
@@ -24,7 +28,7 @@ const Sell = ({navigateTo, dataBuySell, operations, operationsReverse,operations
           <input type="text" className="form-control" value={dataBuySell[1].PEN} placeholder={dataBuySell[1].PEN} onChange={(event)=> operationsReverse(event.target.value, dataBuySell[1].id)} id="exampleForm2"/>
         </div>
         <div className="col-12 col-sm text-sm-center text-md-left my-sm-3">
-          <button type="button" className="btn btn-success"onClick={()=> {navigateTo('confirmation'); operationsClick(dataBuySell[1])}}>Success</button>
+          <button type="button" className="btn btn-success"onClick={()=> {navigateTo('confirmation'); operationsClick(dataBuySell[1])}}>VENDER</button>
         </div>
       </div>
     </form>
