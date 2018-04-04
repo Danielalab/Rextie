@@ -2,7 +2,7 @@
   "name": "rextie",
   "version": "1.0.0",
   "description": "Simple starter package for Redux with React and Babel support",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "repository": "",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
@@ -32,6 +32,12 @@
   "dependencies": {
     "axios": "^0.18.0",
     "firebase": "^4.12.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^3.2.1",
+    "gulp-uglify": "^3.0.0",
     "prop-types": "^15.6.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
