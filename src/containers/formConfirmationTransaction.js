@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   buttonReset: () => {
       dispatch(resetButton())
-  }
+  },
 })
 
 export default connect( mapStateToProps, mapDispatchToProps)(ConfirmationTransaction);

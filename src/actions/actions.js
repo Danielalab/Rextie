@@ -11,7 +11,9 @@ export const actionTypes = {
   VALIDATE_FORM: 'VALIDATE_FORM',
   RESET_BUTTON: 'RESET_BUTTON',
   API_USER: 'API_USER',
-  GET_VALUE: 'GET_VALUE'
+  GET_VALUE: 'GET_VALUE',
+  GET_VALUE_ORIGEN: 'GET_VALUE_ORIGEN',
+  GET_VALUE_DESTINATION: 'GET_VALUE_DESTINATION'
 };
 
 export const navigationTo = (page) => ({
@@ -78,6 +80,15 @@ export const apiUser = (user) => ({
 
 export const getValue = (val) => ({
   type: actionTypes.GET_VALUE,
-  val,
-  text
+  val
+})
+
+export const getValueOrigen = (val) => ({
+  type: actionTypes.GET_VALUE_ORIGEN,
+  val
+})
+
+export const getValueDestination = (val) => ({
+  type: actionTypes.GET_VALUE_DESTINATION,
+  val
 })

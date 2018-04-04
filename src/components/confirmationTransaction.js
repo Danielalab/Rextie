@@ -57,7 +57,7 @@ function reset(changeButton) {
   disabledButton = true;
   changeButton(disabledButton)
 }
-const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive, moneySend, moneyReceive, telefono, dataClick,  disabledButton, changeButton, buttonReset}) => (
+const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive, moneySend, moneyReceive, telefono, dataClick,  disabledButton, changeButton, buttonReset, getValue, getValueDestination, getValueOrigen}) => (
   <div className="container-fluid">
     <div className="row justify-content-center">
     <div className="card col-11 col-md-10 p-0 m-5">
@@ -80,18 +80,34 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
       </div>
       <div className="form-row justify-content-center">
         <div className="form-group col-9 col-md-8">
-          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeOrigin(event.target.value, changeButton)}>
-            <option value="">Elige una Cuenta de Origen</option>
-            <option value='1'>prueba</option>            
+          <select id="inputOrigin" className="form-control" onChange={(event) => {
+            onChangeOrigin(event.target.value, changeButton)
+            
+            const value = event.target.value
+            const option = event.target.options[event.target.selectedIndex].text
+
+            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('accounts').child(value));
+            getValueOrigen(option);
+            }}>
+            <option value="accountOrigen">Elige una Cuenta de Origen</option>
+            <option value='1'>5271 7124 5444 3624 - BCP</option>
           </select>
         </div>
         <div clasName="col-2 col-md-2">
           <span className="lnr lnr-plus-circle add-Account-icon m-2" onClick={() => {navigateTo('addAccount')}}></span>
         </div>
         <div className="form-group col-9 col-md-8">
-          <select id="inputdestination" className="form-control" onChange={(event) => onChangeDestination(event.target.value, changeButton)}>
-            <option value="">Elige una Cuenta de Destino</option>
-            <option value='1'>prueba</option>                        
+          <select id="inputdestination" className="form-control" onChange={(event) => {
+            onChangeDestination(event.target.value, changeButton);
+            
+            const value = event.target.value
+            const option = event.target.options[event.target.selectedIndex].text
+
+            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('accounts').child(value));
+            getValueDestination(option);
+            }}>
+            <option value="accountDestino">Elige una Cuenta de Destino</option>
+            <option value='1'>4485 5680 5607 0990 - INTERBANK</option>
           </select>
         </div>
         <div clasName="col-2 col-md-2">
@@ -99,7 +115,10 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
         </div>
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputAddress2">Teléfono</label>
-          <input type="text" className="form-control" id="inputAddress2" placeholder={telefono} onChange={(event) => onChangePhone(event.target.value, changeButton)}/>
+          <input type="text" className="form-control" id="inputAddress2" placeholder={telefono} onChange={(event) => {
+            onChangePhone(event.target.value, changeButton);
+            getValue(event.target.value);
+            }}/>
         </div>
       </div>
     </form>
