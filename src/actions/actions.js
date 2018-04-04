@@ -11,7 +11,8 @@ export const actionTypes = {
   VALIDATE_FORM: 'VALIDATE_FORM',
   RESET_BUTTON: 'RESET_BUTTON',
   API_USER: 'API_USER',
-  GET_VALUE: 'GET_VALUE'
+  GET_VALUE: 'GET_VALUE',
+  GET_DATA_FIREBASE: 'GET_DATA_FIREBASE'
 };
 
 export const navigationTo = (page) => ({
@@ -80,4 +81,8 @@ export const getValue = (val) => ({
   type: actionTypes.GET_VALUE,
   val,
   text
+})
+
+export const getDataFirebase = () => ({
+  type: actionTypes.GET_DATA_FIREBASE
 })

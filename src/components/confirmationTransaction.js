@@ -107,7 +107,7 @@ const ConfirmationTransaction = ({ navigateTo, typeOperation, sendTo, toReceive,
       <a className="btn btn-back" onClick={() => {reset(changeButton),navigateTo('transaction')}}>Cambiar Operación</a>
       <button className="btn btn-success"
         disabled={disabledButton ? "disabled" : false}
-        onClick={() => { reset() , navigateTo('final-transaction')}}
+        onClick={() => { reset(changeButton) , navigateTo('final-transaction')}}
         >Aceptar</button> 
     </div>
     </div>

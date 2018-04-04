@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from 'firebase';
 import { firebaseApp } from '../firebase';
 import Logo from './Logo';
+import { getDataFirebase } from '../actions/actions';
 
 // alamacenar los datos de usuario en firebase
 
@@ -38,7 +39,9 @@ const Login = ({loginUser, dataFirebaseUser}) => (
                     loginUser('loginDni');
                   })
                   .catch(error => console.log(`Error ${error.code}: ${error.message}`))
-                  firebaseApp.auth().onAuthStateChanged(user => {dataFirebaseUser(firebaseApp.database().ref('bd').child(user.uid).toJSON())})}}>
+                  firebaseApp.auth().onAuthStateChanged(user => {dataFirebaseUser(user)})
+                  }
+                }>
                   <i className="fa fa-google-plus mr-2 font-2x"></i>Google 
                 </button>
               </div>
