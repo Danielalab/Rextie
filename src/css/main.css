@@ -149,7 +149,16 @@ h5.card-title.color-2.font-weight-bold.font-size-title {
   min-height: 78%; }
 
 .transaction {
-  margin-top: 3rem; }
+  margin-top: 3rem; 
+}
+
+.background {
+  background-image: url(https://rextie-static-prod2.s3.amazonaws.com/img/bg/bg_men_laptop_tablet.b288ddceb337.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  z-index: -1;
+}
 
 .margin-his {
   margin-top: 3.5rem; }
