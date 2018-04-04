@@ -149,9 +149,13 @@ h5.card-title.color-2.font-weight-bold.font-size-title {
   min-height: 78%; }
 
 .transaction {
-  margin-top: 6rem; }
+  margin-top: 3rem; }
 
 .margin-his {
   margin-top: 3.5rem; }
+
+@media (min-width: 768px) {
+  .transaction {
+    margin-top: 6rem; } }
 
 /*# sourceMappingURL=main.css.map */

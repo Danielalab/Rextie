@@ -15,9 +15,15 @@
 }
   
 .transaction {
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
   
 .margin-his {
   margin-top: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .transaction {
+    margin-top: 6rem;
+  }
 }
