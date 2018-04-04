@@ -89,39 +89,29 @@ h5.card-title.color-2.font-weight-bold.font-size-title {
 .add-Account-icon {
   color: #26A8E0;
   cursor: pointer;
-  font-size: 2.3rem; 
-}
-
-.nav-margin {
-  margin-top: 3rem;
-}
-
-.change {
-  margin-top: .3rem;
-  margin-bottom: 0;
-}
+  font-size: 2.3rem; }
 
 /* Style for Main */
 .heigth-min {
   min-height: 80vh; }
 
-.container-main {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  float: left;
-  min-width: 85vh;
-  font-size: 14px;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border-left: 1px solid #ccc;
-  height: 99.8vh;
-  overflow: auto; }
-
+@media (min-width: 768px) {
+  .container-main {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 85vh;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-left: 1px solid #ccc;
+    height: 99.8vh;
+    overflow: auto; } }
 @media (min-width: 576px) {
   .text-md-left {
     text-align: start; } }
@@ -136,7 +126,7 @@ h5.card-title.color-2.font-weight-bold.font-size-title {
 .font-size {
   font-size: 1rem; }
 
-/*  USER INFORMATION */
+/*  USER INFORMATION  rgba(0,0,0,.16),*/
 .card-border {
   border: 1px solid #F6F9FC;
   border-left: 8px solid #7ace3b;
@@ -159,9 +149,9 @@ h5.card-title.color-2.font-weight-bold.font-size-title {
   min-height: 78%; }
 
 .transaction {
-  margin-top: 4rem; }
+  margin-top: 6rem; }
 
 .margin-his {
   margin-top: 3.5rem; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
