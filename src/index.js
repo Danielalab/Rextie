@@ -7,7 +7,7 @@ import store from './store';
 import './style.css';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render (
+ReactDOM.render(
   <Provider store={store}>
     <AppRender/>
   </Provider>,

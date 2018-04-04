@@ -13,9 +13,9 @@ var config = {
 var paths = {
   assets: "assets/",
   html: "*.html",
-  sass: "scss/*.scss",
-  css: "css/*.css",
-  js: "js/*.js",
+  sass: "sass/*.scss",
+  css: "*.css",
+  js: "*.js",
 };
 
 var sources = {
@@ -34,7 +34,7 @@ gulp.task('html', ()=> {
 gulp.task('js', function () {
   return gulp.src(sources.js)
     .pipe(concat('app.min.js'))
-    .pipe(babel({ presets: ['env'] }))
+    .pipe(babel({ presets: ['react','env'] }))
     .pipe(uglify())
     .pipe(gulp.dest(config.dist + 'js'))
 });
@@ -52,3 +52,5 @@ gulp.task('watch', function () {
   gulp.watch([sources.css, sources.sass], ['css']);
   gulp.watch(sources.js, ['js']);
 });
+
+gulp.task('default', [ 'css', 'js']);
