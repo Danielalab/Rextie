@@ -168,7 +168,7 @@ const AddFavoriteAccount = ({navigateTo, disabledButton, changeButton, buttonRes
           <select id="inputOrigin" className="form-control" onChange={(event) => onChangeTypeAccount(event.target.value, changeButton)}>
             <option value="">Elige el tipo de Cuenta</option>
             <option value="Ahorros">Cuenta de Ahorros</option>
-            <option value="Corriente">Cuenta Corriente</option>            
+            <option value="Corriente">Cuenta Corriente</option>
           </select>
         </div>
         <div className="form-group col-11 col-md-9">

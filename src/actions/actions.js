@@ -10,7 +10,8 @@ export const actionTypes = {
   GET_DATA_RENIEC: 'GET_DATA_RENIEC',
   VALIDATE_FORM: 'VALIDATE_FORM',
   RESET_BUTTON: 'RESET_BUTTON',
-  API_USER: 'API_USER'
+  API_USER: 'API_USER',
+  GET_VALUE: 'GET_VALUE'
 };
 
 export const navigationTo = (page) => ({
@@ -73,4 +74,10 @@ export const resetButton = () => ({
 export const apiUser = (user) => ({
   type: actionTypes.API_USER,
   user
+})
+
+export const getValue = (val) => ({
+  type: actionTypes.GET_VALUE,
+  val,
+  text
 })

@@ -7,7 +7,7 @@ usuarios realizar una cotización y operación de cambio de dólares.
 
 ## Desarrollado para 
 
-[Laboratoria](http://laboratoria.la)
+[REXTIE](https://www.rextie.com/)
 
 ### Integrantes:
 - Betsy Vidal

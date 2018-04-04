@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { validateForm, resetButton } from '../actions/actions';
+import { validateForm, resetButton, getValue } from '../actions/actions';
 import AddAccount from '../components/AddAccount';
 
 const mapStateToProps = (state) => {
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   buttonReset: () => {
       dispatch(resetButton())
+  },
+  getValue: (val, text) => {
+    dispatch(getValue(val, text))
   }
 })
 

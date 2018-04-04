@@ -1,4 +1,6 @@
 import React from 'react';
+import firebase from 'firebase';
+import { firebaseApp } from '../firebase';
 
 // inicia validación del formulario
 
@@ -85,7 +87,11 @@ const AddAccount = ({navigateTo, disabledButton, changeButton, buttonReset}) => 
       <div className="form-row justify-content-center">
         <div className="form-group col-11 col-md-9">
           <label className="text-uppercase" for="inputOrigin">Categoría de la Cuenta</label>
-          <select id="inputOrigin" className="form-control" onChange={(event) => onChangeCategory(event.target.value, changeButton)}>
+          <select id="inputOrigin" className="form-control" onChange={(event) => {
+            onChangeCategory(event.target.value, changeButton); 
+            firebaseApp.auth().onAuthStateChanged(user => firebaseApp.database().ref('bd').child(user.uid).child('account').push({
+              valueAccount: event.target.options[event.target.selectedIndex].text
+            }));}}>
             <option value="">...</option>
             <option value="my-account">Cuenta Propia (mis cuentas)</option>
             <option value="my-favorites">Cuenta de Terceros (mis favoritos)</option>

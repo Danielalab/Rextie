@@ -24,7 +24,8 @@ const INITIAL_STATE = {
   dataReniec:{},
   disabledButton: true,
   dataUser: dataUser,
-  user: {name: 'Maria'}
+  user: {name: 'Maria'},
+  account: {}
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -117,6 +118,11 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         disabledButton: true
+      }
+    case actionTypes.GET_VALUE:
+      return {
+        ...state,
+        account: true
       }
     default:
       return state;
