@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
-import { loginFirebase, apiUser, dataUser, getDataReniec } from '../actions/actions';
+import { loginFirebase, apiUser, dataUser, getDataReniec, getDataFirebase } from '../actions/actions';
 import axios from 'axios';
 import AppRender from '../components/AppRender';
+import firebase from 'firebase';
+import { firebaseApp } from '../firebase';
 
 const mapStateToProps = (state) => {
   const { initialPage, user, dataReniec } = state.AppReducer;
@@ -29,13 +31,23 @@ const mapDispatchToProps = (dispatch) => ({
         "dni": dni
       },
       headers: {
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijk3ZTY1ZWJiNjZlYWQ4MGY0YzUwZGEwMmVlNjk1NTA3OTE4ODgwZjA1N2EwYzAxMzIwZGY5NTZmNzVlZDk5YjAyMzhhMDViOGQ1N2U0YzQ3In0.eyJhdWQiOiIxIiwianRpIjoiOTdlNjVlYmI2NmVhZDgwZjRjNTBkYTAyZWU2OTU1MDc5MTg4ODBmMDU3YTBjMDEzMjBkZjk1NmY3NWVkOTliMDIzOGEwNWI4ZDU3ZTRjNDciLCJpYXQiOjE1MjI2NDg0NDAsIm5iZiI6MTUyMjY0ODQ0MCwiZXhwIjoxNTU0MTg0NDQwLCJzdWIiOiIxNzA5Iiwic2NvcGVzIjpbInVzZS1yZW5pZWMiXX0.nvb76Q2tfypCBK6m2rz_XNH5rwcVrtnyZiHBktWAxRLnfuTteRZbvn45yLcojSI4-ztAlJ4RLu23j7fpeA--DpJ2HNmqK3g8HIiN8jEs5kmY5P9fOZbG3L1fjTmH1esqiGH0UlBgToaIW1kXFNPqNk_P22K64TtcSBrbde4RzHkZL5ifCJpdwFQVDKzQuFBO9sKByWtTEKtIQfeWOOal5pwtxmrIC5Or7gN61-q2a9_nRl7XnXIGCiS6BpXXIIzplVzFqKPvdkw6Hdlvz9S9qBQIxZnS7HhNS4AJqL_WVb5gJVxjLjYowh4LNOujEYw3MPrdDrvoVzoJdAoNCa5ukEqg6q0zUytxJrOFFsBvfdi9ekauvEwGAoH5_ZmGmhWnpbXeomjUOOZ178VlqblXUT0WJyBo9FUpH_Q7lV92EggZpHeI_o9Il7K7zIm8nawpr09_XE_abmmm5e4WVe_XbaD28dI-zEDyzhQ376MHkYPFQTm5JQjFQTIt1Ejl4kigGY7v6wscaU9Bg5i_t2omTEimidJDXNRP4oo79vB0RRXgL3rLOa3MeU6KIfajS3uL54ekR14pwiG6DCQBZ4gZRf8B0WzPkXzJ5bWad1X50YnFmZKCWfGqtgXOvgRjG0EBuZWIR1QJvi8aS0B0gJSXzORKOgMqV9M3h3J2wlUlftc',
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjFkZTBiNmZlNjE5MjAzYjdiODkwZGZiOWMwM2IzZTkxMzdiMGUwNzRiOTQxN2Q0Y2IyOTA4NGQzN2JjY2IyMmQwOGRkZTEyZTdmYWFjNGRkIn0.eyJhdWQiOiIxIiwianRpIjoiMWRlMGI2ZmU2MTkyMDNiN2I4OTBkZmI5YzAzYjNlOTEzN2IwZTA3NGI5NDE3ZDRjYjI5MDg0ZDM3YmNjYjIyZDA4ZGRlMTJlN2ZhYWM0ZGQiLCJpYXQiOjE1MjI4MDcyMTMsIm5iZiI6MTUyMjgwNzIxMywiZXhwIjoxNTU0MzQzMjEzLCJzdWIiOiIxNzE2Iiwic2NvcGVzIjpbInVzZS1yZW5pZWMiXX0.VXwnrN-qizZy7iys5q5DcGL3Kq5kzUm9pLXU_YHHrTx5g7yiZcDw9FSEWDrXDTSJfxPiUwj7EgYmwrSbu41XcF5J6ylaCBmLhpLKBRXKhRyHVTUSupTMSw8GGyWGbzNiL7PoBjh-pE9I6Xtq3W4FAm79iqGl_JvEugKL6RRwftNEj4g-z87suQkyFE2VklZ_SLC3dLfkJOYhzzhU6demQCUxPwiCwoUzFnhS3snvuDhBBVh6KlbEyw3EwFTugmzms_rK2ZB3OfZdy1XKkfdy_EZoXktxBForxR71Ae9xXaW3yeLZs-mxtyGocp69j8zWIiIZLKqEueA8nJ0CIkj5W9k4c43AKMzXNviTQebsAceSuDq7pF28O4ef5MAgQZBYSlQLqoK9f8p9SgWyaCCV_ISbnhFJ964IQaVVJPkx6ho5ggCMFck34hooT4qBsLgTE-zMBSszddWWgaeNcDj3mFuf3p5MNQRknQRs00pNARKki8K5fiBTvavP9pUKFIjNDRkbgfTIMBScjsEhGJDMRqeY3kFkMH74j5IsJYEF2TVD3hPfzxCLYxGv7cW4Ud4GWlWvfI41sspmMgNqokpEJKXHPsCtQsVaEzzIAKPhRWdgCqoNEDVrBAEFxW-XbG2yTu9ahPopSkyXpUXK8WuecvP_AZWbZRihdzyPiUghj5s',
         'Accept': 'application/json'
       },
     })   
       .then( response  => { 
         dispatch(getDataReniec(response.data))
       }) 
+  },
+
+  getDataUserFirebase: (userId) => {
+    let data;
+    firebaseApp.database().ref('bd').child(userId).child('account')
+          .on('value', function(s) {
+            data = s.val();
+          });
+    console.log(data);     
+    // dispatch(getDataFirebase(data))
   }
 })
 

@@ -20,7 +20,7 @@ const FinalTransaction= ({ navigateTo, dataClick, dataDestination, dataSend, dat
           </ul>
           <ul className="col-5 col-md-5">
               <li className="font-size-regular">{('COMPRA' === dataClick.id) ? 'S/ ' + dataClick.PEN : '$ ' + dataClick.quantity}</li>
-              <li className="font-size-regular">{dataDestination}</li>
+              <li className="font-size-regular">BCP</li>
               <li className="font-size-regular">Interbank</li>
               <li className="font-size-regular">00316600300127342868</li>
               <li className="font-size-regular">REXTIE SAC</li>
@@ -39,8 +39,8 @@ const FinalTransaction= ({ navigateTo, dataClick, dataDestination, dataSend, dat
           <ul className="col-5 col-md-5">
               <li className="font-size-regular">{('COMPRA' === dataClick.id) ? '$ ' + dataClick.quantity : 'S/ ' + dataClick.PEN}</li>
               <li className="font-size-regular">{dataClick.priceUSD}</li>
-              <li className="font-size-regular">{dataSend}</li>
-              <li className="font-size-regular">{dataSend1}</li>
+              <li className="font-size-regular">Interbank</li>
+              <li className="font-size-regular">4485 5680 5607 0990</li>
               <li className="font-size-regular">Betsy Vidal</li>
           </ul>
           </div>

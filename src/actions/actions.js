@@ -13,7 +13,8 @@ export const actionTypes = {
   API_USER: 'API_USER',
   GET_VALUE: 'GET_VALUE',
   GET_VALUE_ORIGEN: 'GET_VALUE_ORIGEN',
-  GET_VALUE_DESTINATION: 'GET_VALUE_DESTINATION'
+  GET_VALUE_DESTINATION: 'GET_VALUE_DESTINATION',
+  GET_DATA_FIREBASE: 'GET_DATA_FIREBASE'
 };
 
 export const navigationTo = (page) => ({
@@ -90,5 +91,9 @@ export const getValueOrigen = (val) => ({
 
 export const getValueDestination = (val) => ({
   type: actionTypes.GET_VALUE_DESTINATION,
-  val
+  val,
+})
+
+export const getDataFirebase = () => ({
+  type: actionTypes.GET_DATA_FIREBASE
 })
